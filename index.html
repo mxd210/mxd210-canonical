@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+
+  <title>MXD210 • Giải pháp xây dựng & cửa hàng affiliate</title>
+  <meta name="description" content="MXD210 – chia sẻ kinh nghiệm thi công, tư vấn giải pháp xây dựng và tổng hợp cửa hàng affiliate sản phẩm chọn lọc. Dễ hiểu, dễ chọn, đúng nhu cầu thực tế."/>
+
+  <!-- Giai đoạn REBUILD trên repo thử nghiệm: tránh index -->
+  <meta name="robots" content="noindex,follow"/>
+
+  <!-- Khi sync sang repo mxd210 chính thức thì chỉnh lại canonical + og:url nếu cần -->
+  <link rel="canonical" href="https://mxd210.github.io/"/>
+
+  <meta property="og:title" content="MXD210 • Giải pháp xây dựng & cửa hàng affiliate"/>
+  <meta property="og:description" content="Chia sẻ kinh nghiệm thi công, tư vấn giải pháp xây dựng và cửa hàng affiliate sản phẩm chọn lọc từ nhiều sàn thương mại điện tử."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mxd210.github.io/"/>
+  <meta property="og:image" content="https://mxd210.github.io/assets/img/og-mxd210.webp"/>
+
+  <style>
+    :root{
+      --bg:#f4f4f5;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --border:#e5e7eb;
+      --radius:14px;
+      --shadow:0 8px 30px rgba(15,23,42,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+    .page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter:blur(16px);
+      background:rgba(244,244,245,.88);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .topbar-inner{
+      max-width:1040px;
+      margin:0 auto;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .logo{
+      font-weight:700;
+      letter-spacing:.03em;
+      font-size:18px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .logo span{
+      padding:3px 8px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#fff;
+      font-size:12px;
+      font-weight:600;
+    }
+    .logo-sub{
+      font-size:11px;
+      color:var(--muted);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:13px;
+    }
+    .nav a{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .nav a:hover{
+      border-color:var(--border);
+      background:#fff;
+      color:var(--text);
+    }
+    .nav .nav-primary{
+      background:var(--accent);
+      color:#fff;
+      border-color:transparent;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .nav .nav-primary:hover{
+      transform:translateY(-1px);
+    }
+
+    .main{
+      flex:1;
+    }
+    .container{
+      max-width:1040px;
+      margin:0 auto;
+      padding:18px 16px 32px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(0,2.6fr);
+      gap:18px;
+      margin-bottom:22px;
+    }
+    @media (max-width:768px){
+      .hero{
+        grid-template-columns:minmax(0,1fr);
+      }
+    }
+    .hero-main{
+      padding:18px 18px 20px;
+      background:linear-gradient(135deg,#eff6ff,#f9fafb);
+      border-radius:20px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:#1d4ed8;
+      font-size:11px;
+      margin-bottom:10px;
+      font-weight:500;
+    }
+    .hero-pill span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:16px;
+      height:16px;
+      border-radius:999px;
+      background:#1d4ed8;
+      color:#fff;
+      font-size:11px;
+    }
+    .hero-title{
+      font-size:22px;
+      line-height:1.3;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    .hero-desc{
+      font-size:13px;
+      line-height:1.6;
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+    .hero-list{
+      list-style:none;
+      display:grid;
+      grid-template-columns:minmax(0,1fr);
+      gap:6px;
+      font-size:13px;
+      margin-bottom:16px;
+      color:#374151;
+    }
+    .hero-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:6px;
+    }
+    .hero-list strong{
+      font-weight:600;
+      color:#111827;
+    }
+    .hero-list span.bullet{
+      width:16px;
+      height:16px;
+      border-radius:999px;
+      background:#22c55e1a;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:11px;
+      color:#16a34a;
+      margin-top:2px;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-size:13px;
+      font-weight:500;
+      cursor:pointer;
+      transition:all .16s ease;
+    }
+    .btn-main{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .btn-main:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 26px rgba(37,99,235,.45);
+    }
+    .btn-ghost{
+      background:#fff;
+      color:#111827;
+      border-color:var(--border);
+    }
+    .btn-ghost:hover{
+      background:#f9fafb;
+    }
+    .btn span.icon{
+      font-size:14px;
+    }
+
+    .hero-side{
+      display:grid;
+      grid-template-rows:minmax(0,1fr) minmax(0,1fr);
+      gap:10px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:14px 14px 13px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{
+      font-size:14px;
+      margin-bottom:4px;
+      font-weight:600;
+    }
+    .card p{
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:8px;
+      line-height:1.5;
+    }
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .tag{
+      padding:4px 8px;
+      border-radius:999px;
+      background:#f3f4f6;
+      font-size:11px;
+      color:#4b5563;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-bottom:18px;
+    }
+    @media (max-width:900px){
+      .grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+    @media (max-width:640px){
+      .grid{
+        grid-template-columns:minmax(0,1fr);
+      }
+    }
+    .section-title{
+      font-size:15px;
+      font-weight:600;
+      margin-bottom:6px;
+    }
+    .section-desc{
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    .stat-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+      font-size:11px;
+      color:#4b5563;
+    }
+    .stat-pill{
+      padding:4px 8px;
+      border-radius:999px;
+      background:#ecfeff;
+      border:1px solid #cffafe;
+    }
+
+    .contact-card{
+      display:grid;
+      grid-template-columns:minmax(0,1.4fr) minmax(0,1.6fr);
+      gap:10px;
+      margin-bottom:6px;
+    }
+    @media (max-width:640px){
+      .contact-card{
+        grid-template-columns:minmax(0,1fr);
+      }
+    }
+    .contact-row{
+      font-size:12px;
+      color:#374151;
+      margin-bottom:4px;
+    }
+    .contact-row strong{
+      font-weight:600;
+    }
+    .contact-note{
+      font-size:11px;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background:#f9fafb;
+    }
+    .footer-inner{
+      max-width:1040px;
+      margin:0 auto;
+      padding:10px 16px 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+      font-size:11px;
+      color:#6b7280;
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .footer-links a{
+      text-decoration:underline;
+      text-decoration-style:dotted;
+    }
+  </style>
+
+  <!-- Vị trí GA4 (khi dùng thật thì bỏ comment và thay ID)
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Vị trí script affiliate dành cho mxd210 (sau GA4, trước </body> ở các trang khác) -->
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="logo">
+          MXD<span>210</span>
+        </div>
+        <div class="logo-sub">Giải pháp xây dựng • Cửa hàng affiliate</div>
+      </div>
+      <nav class="nav">
+        <a href="#services">Dịch vụ xây dựng</a>
+        <a href="store.html" class="nav-primary">Cửa hàng sản phẩm</a>
+        <a href="blog.html">Blog & Hướng dẫn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-main">
+          <div class="hero-pill">
+            <span>●</span>
+            Mọi thứ xoay quanh công trình thật & nhu cầu thật
+          </div>
+          <h1 class="hero-title">
+            MXD210 – gom kinh nghiệm thi công<br/>và sản phẩm xây dựng chọn lọc
+          </h1>
+          <p class="hero-desc">
+            Thay vì lướt cả rừng thông tin, MXD210 tập trung vào những gì sát với đời sống:
+            từ cách chọn vật tư, phụ kiện nhỏ xíu trong nhà cho đến những kinh nghiệm thi công
+            mà một người đi làm thực tế phải tự tích lũy từng ngày.
+          </p>
+          <ul class="hero-list">
+            <li>
+              <span class="bullet">✓</span>
+              <div><strong>Giải pháp xây dựng dễ hiểu:</strong> nói đúng vào vấn đề, hạn chế lý thuyết lan man.</div>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <div><strong>Cửa hàng affiliate chọn lọc:</strong> ưu tiên sản phẩm đã dùng, hoặc đã được lọc kỹ từ nhiều sàn.</div>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <div><strong>Khu riêng cho affiliate:</strong> ghi lại kinh nghiệm làm aff, cách set link, tối ưu chuyển đổi...</div>
+            </li>
+          </ul>
+          <div class="hero-actions">
+            <a href="store.html" class="btn btn-main">
+              <span class="icon">🛒</span>
+              Vào cửa hàng sản phẩm
+            </a>
+            <a href="blog.html" class="btn btn-ghost">
+              <span class="icon">📚</span>
+              Xem hướng dẫn & tin tức
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="card">
+            <h2>Góc thi công & giải pháp</h2>
+            <p>
+              Nơi tổng hợp các ghi chép thực tế: những lỗi từng gặp, cách xử lý, cách lựa chọn
+              phương án “vừa túi tiền” mà vẫn đảm bảo an toàn và độ bền cho công trình.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Tư vấn vật tư</span>
+              <span class="tag">Kinh nghiệm công trường</span>
+              <span class="tag">Gợi ý tiết kiệm chi phí</span>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Khu dành riêng cho Affiliate</h2>
+            <p>
+              Dành cho những bạn muốn tận dụng kinh nghiệm sẵn có để làm nội dung, xây cộng đồng
+              và kéo đơn affiliate một cách bài bản, không “hên xui”.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Hướng dẫn Shopee/Lazada</span>
+              <span class="tag">Kịch bản nội dung</span>
+              <span class="tag">Mẹo tối ưu link</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" style="margin-bottom:22px;">
+        <h2 class="section-title">Dịch vụ & phạm vi MXD210 đang làm</h2>
+        <p class="section-desc">
+          MXD210 xuất phát từ nhu cầu thật trong quá trình đi công trình. Mọi nội dung và gợi ý đều xoay quanh
+          những việc “đụng tay vào làm”, không phải lý thuyết sách vở.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h2>Tư vấn giải pháp theo nhu cầu</h2>
+            <p>
+              Tập trung vào bối cảnh cụ thể: hiện trạng nhà, ngân sách, mức độ hoàn thiện mong muốn
+              để đề xuất phương án phù hợp, tránh phát sinh vô lý.
+            </p>
+            <div class="stat-row">
+              <span class="stat-pill">Tư vấn qua tin nhắn</span>
+              <span class="stat-pill">Ưu tiên câu hỏi có hình ảnh</span>
+            </div>
+          </article>
+          <article class="card">
+            <h2>Gợi ý vật tư & phụ kiện</h2>
+            <p>
+              Tổng hợp các sản phẩm MXD210 đã lọc trên nhiều sàn, ưu tiên: đánh giá tốt, shop ổn định,
+              dễ bảo hành, dễ mua lại khi cần.
+            </p>
+            <div class="stat-row">
+              <span class="stat-pill">Liên kết nhiều sàn</span>
+              <span class="stat-pill">Lọc theo trải nghiệm dùng thật</span>
+            </div>
+          </article>
+          <article class="card">
+            <h2>Kinh nghiệm dành cho người làm aff</h2>
+            <p>
+              Từ cách đọc số liệu, điều chỉnh link, đến việc xây chuỗi nội dung dài hơi thay vì chạy theo vài đơn lẻ.
+            </p>
+            <div class="stat-row">
+              <span class="stat-pill">Note “xương máu”</span>
+              <span class="stat-pill">Update dần theo thời gian</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="store-overview" style="margin-bottom:22px;">
+        <h2 class="section-title">Cửa hàng MXD – sản phẩm chọn lọc</h2>
+        <p class="section-desc">
+          Khu này sẽ hiển thị danh sách sản phẩm chi tiết ở <strong>store.html</strong>. Ngay trên trang chủ,
+          mình chỉ giữ một vài lối tắt rõ ràng để bạn dễ bấm tới đúng nhóm mình cần.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h2>Vật tư & phụ kiện công trình</h2>
+            <p>Các món “nhỏ mà có võ”: phụ kiện, đồ siết/siết, dụng cụ hỗ trợ thi công…</p>
+          </article>
+          <article class="card">
+            <h2>Đồ gia dụng liên quan xây dựng</h2>
+            <p>Các sản phẩm phục vụ hoàn thiện nhà cửa, setup không gian sống cho gọn gàng, tiện dùng.</p>
+          </article>
+          <article class="card">
+            <h2>Deal tổng hợp từ nhiều sàn</h2>
+            <p>Những mã hàng xuất hiện trên nhiều sàn để bạn dễ so sánh giá, phí ship và ưu đãi.</p>
+          </article>
+        </div>
+        <a href="store.html" class="btn btn-main">
+          <span class="icon">➡️</span>
+          Mở cửa hàng chi tiết (store.html)
+        </a>
+      </section>
+
+      <section id="affiliate" style="margin-bottom:22px;">
+        <h2 class="section-title">Góc chia sẻ & hướng dẫn Affiliate</h2>
+        <p class="section-desc">
+          Phần này sẽ được triển khai dần trong mục <strong>Blog & Tin tức</strong>. Từ góc nhìn người đi làm thực tế,
+          MXD210 ghi lại cách tận dụng những gì mình biết để xây nội dung và kéo đơn một cách bền.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h2>Hướng dẫn từng bước</h2>
+            <p>Đăng ký, tạo link, gắn vào bài viết, đọc số liệu… từng phần sẽ được tách thành bài riêng trong blog.</p>
+          </article>
+          <article class="card">
+            <h2>Kịch bản nội dung</h2>
+            <p>Cách kể câu chuyện xoay quanh một vấn đề thực tế, thay vì chỉ… quăng link.</p>
+          </article>
+          <article class="card">
+            <h2>Note “xương máu”</h2>
+            <p>Những gì từng làm sai, từng thử, từng rút kinh nghiệm, để bạn không phải lặp lại từ đầu.</p>
+          </article>
+        </div>
+        <a href="blog.html" class="btn btn-ghost">
+          <span class="icon">📝</span>
+          Xem mục Blog & hướng dẫn (blog.html)
+        </a>
+      </section>
+
+      <section id="contact" style="margin-bottom:10px;">
+        <h2 class="section-title">Liên hệ & trao đổi nhanh</h2>
+        <p class="section-desc">
+          MXD210 ưu tiên các trao đổi có ngữ cảnh rõ ràng: nếu được, hãy gửi kèm hình ảnh hiện trạng,
+          vài dòng mô tả và mong muốn của bạn. Càng rõ, tư vấn càng sát.
+        </p>
+        <div class="contact-card card">
+          <div>
+            <div class="contact-row">
+              <strong>Kênh liên hệ chính:</strong> cập nhật theo thông tin mới nhất trên MXD210
+            </div>
+            <div class="contact-row">
+              <strong>Thời gian phản hồi:</strong> tùy theo lịch công trình, sẽ cố gắng trả lời sớm nhất có thể.
+            </div>
+            <div class="contact-note">
+              Khi sync sang bản chính thức, khu này sẽ được gắn nút Zalo / Facebook / số điện thoại cụ thể theo MXD210.
+            </div>
+          </div>
+          <div>
+            <div class="contact-row">
+              <strong>Lưu ý nhỏ:</strong> MXD210 không nhận mọi dạng công việc,
+              ưu tiên những gì thực sự làm được và giúp ích cho bạn lâu dài.
+            </div>
+            <div class="contact-note">
+              Những góp ý, chia sẻ kinh nghiệm từ bạn cũng rất đáng giá – có thể được tổng hợp lại trong blog (ẩn thông tin cá nhân).
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MXD210 – Giải pháp xây dựng & cửa hàng affiliate.</div>
+      <div class="footer-links">
+        <span>Giai đoạn: Rebuild Canonical v0.1 (repo thử nghiệm)</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Sau này (khi đã có file js), vị trí chuẩn là:
+<script defer src="./assets/js/analytics-mxd210.js?v=1"></script>
+<script defer src="./assets/js/mxd-affiliates.js?v=1"></script>
+<script defer src="./assets/js/mxd-buy.js?v=1"></script>
+-->
+</body>
+</html>
