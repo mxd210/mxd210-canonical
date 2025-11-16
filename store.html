@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+
+  <title>Cửa hàng MXD210 – Sản phẩm chọn lọc</title>
+  <meta name="description" content="Cửa hàng MXD210 – tổng hợp các sản phẩm, vật tư, phụ kiện và đồ gia dụng liên quan đến xây dựng, được lựa chọn và sàng lọc kỹ từ nhiều sàn thương mại điện tử."/>
+  <meta name="robots" content="noindex,follow"/>
+
+  <!-- Khi sync sang repo mxd210 chính thức thì chỉnh lại canonical + og:url nếu cần -->
+  <link rel="canonical" href="https://mxd210.github.io/store.html"/>
+
+  <meta property="og:title" content="Cửa hàng MXD210 – Sản phẩm chọn lọc"/>
+  <meta property="og:description" content="Các sản phẩm được MXD210 chọn kỹ, ưu tiên trải nghiệm dùng thật, dễ mua lại, dễ bảo hành."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mxd210.github.io/store.html"/>
+  <meta property="og:image" content="https://mxd210.github.io/assets/img/og-mxd210.webp"/>
+
+  <style>
+    :root{
+      --bg:#f4f4f5;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --border:#e5e7eb;
+      --radius:14px;
+      --shadow:0 8px 30px rgba(15,23,42,.08);
+      --badge-bg:#f3f4f6;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .page{min-height:100vh;display:flex;flex-direction:column}
+
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(16px);
+      background:rgba(244,244,245,.88);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .topbar-inner{
+      max-width:1040px;margin:0 auto;
+      padding:10px 16px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .logo{
+      font-weight:700;letter-spacing:.03em;font-size:18px;
+      display:flex;align-items:center;gap:6px;
+    }
+    .logo span{
+      padding:3px 8px;border-radius:999px;
+      background:var(--accent);color:#fff;font-size:12px;font-weight:600;
+    }
+    .logo-sub{font-size:11px;color:var(--muted)}
+    .nav{
+      display:flex;align-items:center;gap:12px;font-size:13px;
+    }
+    .nav a{
+      padding:6px 10px;border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);white-space:nowrap;
+    }
+    .nav a:hover{
+      border-color:var(--border);background:#fff;color:var(--text);
+    }
+    .nav .nav-primary{
+      background:var(--accent);color:#fff;border-color:transparent;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .nav .nav-primary:hover{transform:translateY(-1px)}
+
+    .main{flex:1}
+    .container{
+      max-width:1040px;margin:0 auto;
+      padding:18px 16px 32px;
+    }
+
+    .hero-store{
+      display:grid;
+      grid-template-columns:minmax(0,2.7fr) minmax(0,2.3fr);
+      gap:18px;
+      margin-bottom:22px;
+    }
+    @media (max-width:768px){
+      .hero-store{grid-template-columns:minmax(0,1fr)}
+    }
+    .hero-main{
+      padding:18px 18px 16px;
+      background:linear-gradient(135deg,#eff6ff,#f9fafb);
+      border-radius:20px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+    .hero-pill{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:4px 10px;border-radius:999px;
+      background:var(--accent-soft);color:#1d4ed8;
+      font-size:11px;margin-bottom:10px;font-weight:500;
+    }
+    .hero-pill span{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:16px;height:16px;border-radius:999px;
+      background:#1d4ed8;color:#fff;font-size:11px;
+    }
+    .hero-title{
+      font-size:20px;line-height:1.35;font-weight:700;margin-bottom:6px;
+    }
+    .hero-desc{
+      font-size:13px;line-height:1.6;color:var(--muted);margin-bottom:12px;
+    }
+    .hero-note{
+      font-size:11px;color:#4b5563;margin-bottom:12px;
+    }
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:6px;padding:8px 14px;border-radius:999px;
+      border:1px solid transparent;font-size:13px;
+      font-weight:500;cursor:pointer;transition:all .16s ease;
+    }
+    .btn-main{
+      background:var(--accent);color:#fff;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .btn-main:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 26px rgba(37,99,235,.45);
+    }
+    .btn-ghost{
+      background:#fff;color:#111827;border-color:var(--border);
+    }
+    .btn-ghost:hover{background:#f9fafb}
+    .btn span.icon{font-size:14px}
+
+    .hero-side{
+      display:grid;
+      grid-template-rows:minmax(0,1fr) minmax(0,1fr);
+      gap:10px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:14px 14px 12px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{
+      font-size:14px;margin-bottom:4px;font-weight:600;
+    }
+    .card p{
+      font-size:12px;color:var(--muted);
+      margin-bottom:8px;line-height:1.5;
+    }
+    .tag-row{
+      display:flex;flex-wrap:wrap;gap:6px;
+    }
+    .tag{
+      padding:4px 8px;border-radius:999px;
+      background:var(--badge-bg);
+      font-size:11px;color:#4b5563;
+    }
+
+    .section-title{
+      font-size:15px;font-weight:600;margin-bottom:4px;
+    }
+    .section-desc{
+      font-size:12px;color:var(--muted);margin-bottom:10px;
+    }
+
+    .filter-row{
+      display:flex;flex-wrap:wrap;gap:8px;
+      margin-bottom:12px;
+    }
+    .filter-pill{
+      padding:6px 10px;border-radius:999px;
+      background:#f3f4f6;border:1px solid #e5e7eb;
+      font-size:12px;color:#374151;
+    }
+    .filter-pill[data-active="true"]{
+      background:#2563eb1a;border-color:var(--accent);color:#1d4ed8;
+    }
+
+    .product-layout{
+      display:grid;
+      grid-template-columns:260px minmax(0,1fr);
+      gap:18px;
+    }
+    @media (max-width:900px){
+      .product-layout{grid-template-columns:minmax(0,1fr)}
+    }
+
+    .sidebar{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:12px 12px 10px;
+      box-shadow:var(--shadow);
+      font-size:12px;
+    }
+    .sidebar h3{
+      font-size:13px;margin-bottom:6px;font-weight:600;
+    }
+    .sidebar-block{margin-bottom:10px}
+    .sidebar-list{
+      list-style:none;
+      display:flex;flex-direction:column;gap:4px;
+    }
+    .sidebar-list a{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:5px 7px;border-radius:8px;
+      color:#374151;
+    }
+    .sidebar-list a span.count{
+      font-size:11px;color:var(--muted);
+    }
+    .sidebar-list a:hover{
+      background:#f3f4f6;
+    }
+    .sidebar-note{
+      font-size:11px;color:var(--muted);margin-top:4px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+    @media (max-width:1000px){
+      .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width:640px){
+      .product-grid{grid-template-columns:minmax(0,1fr)}
+    }
+
+    .product-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      padding:10px 10px 9px;
+      display:flex;flex-direction:column;
+      gap:8px;
+      font-size:12px;
+    }
+    .product-tag{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:11px;
+      padding:3px 7px;border-radius:999px;
+      background:#f3f4f6;color:#4b5563;
+    }
+    .product-badge-merchant{
+      display:inline-flex;align-items:center;gap:4px;
+      font-size:10px;
+      padding:3px 6px;border-radius:999px;
+      background:#eff6ff;color:#1d4ed8;
+    }
+    .product-title{
+      font-size:13px;font-weight:600;line-height:1.4;
+      margin-top:2px;
+    }
+    .product-desc{
+      font-size:11px;color:#6b7280;line-height:1.5;
+    }
+    .product-meta{
+      display:flex;flex-wrap:wrap;gap:6px;
+      align-items:center;
+    }
+    .price-row{
+      display:flex;align-items:baseline;gap:4px;
+      font-family:system-ui;
+    }
+    .price-current{
+      font-size:13px;font-weight:700;color:#b91c1c;
+    }
+    .price-old{
+      font-size:11px;color:#9ca3af;text-decoration:line-through;
+    }
+    .price-note{
+      font-size:10px;color:#16a34a;
+    }
+    .product-footer{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-top:4px;
+    }
+    .btn-buy{
+      display:inline-flex;align-items:center;gap:5px;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid transparent;
+      background:var(--accent);color:#fff;
+      font-size:12px;font-weight:500;
+    }
+    .btn-buy span.icon{font-size:13px}
+    .btn-buy:hover{filter:brightness(1.05)}
+    .product-note{
+      font-size:10px;color:#9ca3af;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background:#f9fafb;
+    }
+    .footer-inner{
+      max-width:1040px;margin:0 auto;
+      padding:10px 16px 14px;
+      display:flex;flex-wrap:wrap;gap:8px;
+      align-items:center;justify-content:space-between;
+      font-size:11px;color:#6b7280;
+    }
+    .footer-links{
+      display:flex;flex-wrap:wrap;gap:10px;
+    }
+  </style>
+
+  <!-- GA4 – sau khi dùng thật, bỏ comment + thay ID
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Vị trí script affiliate của mxd210 (sau GA4). 
+       Khi đã có file js chuẩn, có thể dùng dạng:
+       <script defer src="./assets/js/mxd-affiliates.js?v=1"></script>
+       <script defer src="./assets/js/mxd-buy.js?v=1"></script>
+  -->
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="logo">
+          MXD<span>210</span>
+        </div>
+        <div class="logo-sub">Giải pháp xây dựng • Cửa hàng affiliate</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="store.html" class="nav-primary">Cửa hàng sản phẩm</a>
+        <a href="blog.html">Blog & Hướng dẫn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="hero-store">
+        <div class="hero-main">
+          <div class="hero-pill">
+            <span>★</span>
+            Cửa hàng được lựa chọn từ kinh nghiệm dùng thật
+          </div>
+          <h1 class="hero-title">
+            Cửa hàng MXD210 – sản phẩm gắn với<br/>công trình và không gian sống hằng ngày
+          </h1>
+          <p class="hero-desc">
+            Thay vì gom tất cả mọi thứ, MXD210 ưu tiên những sản phẩm đã qua “lọc”:
+            phù hợp với nhu cầu thực tế, dễ mua lại, hạn chế kiểu “thử vận may”.
+          </p>
+          <p class="hero-note">
+            Giai đoạn này, danh sách mới chỉ là mẫu demo để chuẩn hóa khung. Khi chạy bản chính thức,
+            dữ liệu sẽ được lấy từ file JSON (hoặc công cụ import) theo chuẩn mxd210.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="#products" class="btn btn-main">
+              <span class="icon">🛠️</span>
+              Xem danh sách sản phẩm mẫu
+            </a>
+            <a href="blog.html" class="btn btn-ghost">
+              <span class="icon">📚</span>
+              Đọc hướng dẫn chọn sản phẩm
+            </a>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="card">
+            <h2>Sản phẩm liên quan thi công & hoàn thiện</h2>
+            <p>
+              Từ phụ kiện, dụng cụ nhỏ cho đến những món hỗ trợ hoàn thiện nhà cửa. Ưu tiên những món
+              mà khi hư hỏng hoặc thiếu, bạn có thể đặt lại dễ dàng trên các sàn lớn.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Vật tư nhỏ</span>
+              <span class="tag">Dụng cụ cầm tay</span>
+              <span class="tag">Đồ sửa chữa nhanh</span>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Đồ gia dụng & phụ kiện không gian sống</h2>
+            <p>
+              Những món giúp không gian sống gọn gàng, sạch sẽ hơn, hoặc đơn giản là “đỡ bất tiện”
+              trong quá trình sử dụng hằng ngày.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Gia dụng liên quan xây dựng</span>
+              <span class="tag">Sắp xếp & lưu trữ</span>
+              <span class="tag">Đồ dùng hỗ trợ bảo trì</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="filters" style="margin-bottom:14px;">
+        <h2 class="section-title">Nhóm sản phẩm hiện có (demo)</h2>
+        <p class="section-desc">
+          Đây là các nhóm sản phẩm chính mà MXD210 thường đụng tới. Sau này phần lọc sẽ được
+          nối với dữ liệu thật để bạn bấm là thấy đúng nhóm mình cần.
+        </p>
+        <div class="filter-row">
+          <span class="filter-pill" data-active="true">Tất cả</span>
+          <span class="filter-pill">Vật tư & phụ kiện thi công</span>
+          <span class="filter-pill">Dụng cụ & thiết bị nhỏ</span>
+          <span class="filter-pill">Gia dụng liên quan xây dựng</span>
+          <span class="filter-pill">Sản phẩm xuất hiện trên nhiều sàn</span>
+        </div>
+      </section>
+
+      <section id="products">
+        <div class="product-layout">
+          <aside class="sidebar">
+            <div class="sidebar-block">
+              <h3>Nhóm sản phẩm</h3>
+              <ul class="sidebar-list">
+                <li>
+                  <a href="#cat-vattu">
+                    <span>Vật tư & phụ kiện công trình</span>
+                    <span class="count">demo</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#cat-dungcu">
+                    <span>Dụng cụ & thiết bị nhỏ</span>
+                    <span class="count">demo</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#cat-giadung">
+                    <span>Gia dụng liên quan hoàn thiện</span>
+                    <span class="count">demo</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#cat-multiplat">
+                    <span>Sản phẩm có trên nhiều sàn</span>
+                    <span class="count">demo</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="sidebar-note">
+                Khi có dữ liệu thật, số lượng từng nhóm sẽ được cập nhật tự động từ JSON của mxd210.
+              </div>
+            </div>
+            <div class="sidebar-block">
+              <h3>Lưu ý chung</h3>
+              <div class="sidebar-note">
+                Giá ở đây chỉ là minh họa. Bản chạy thật sẽ đọc từ dữ liệu mới nhất theo từng link
+                (hoặc theo công cụ theo dõi giá sau này).
+              </div>
+            </div>
+          </aside>
+
+          <div class="product-grid">
+            <!-- Sản phẩm demo 1 -->
+            <article class="product-card" id="cat-vattu"
+                     data-sku="mxd210-demo-001"
+                     data-merchant="shopee"
+                     data-origin-url="https://shopee.vn/">
+              <div class="product-tag">Vật tư & phụ kiện</div>
+              <div class="product-title">
+                Bộ phụ kiện bắt vít & tắc kê cơ bản cho sửa chữa nhỏ trong nhà
+              </div>
+              <div class="product-desc">
+                Phù hợp cho các việc lặt vặt: treo kệ, cố định lại bản lề, lắp thêm vài móc treo...
+                Thay vì chạy đi mua từng thứ, có sẵn một bộ gọn là đỡ mất thời gian.
+              </div>
+              <div class="product-meta">
+                <div class="price-row">
+                  <span class="price-current">≈ 120.000đ</span>
+                  <span class="price-old">150.000đ</span>
+                </div>
+                <span class="price-note">Giá demo, sẽ lấy theo link thật</span>
+              </div>
+              <div class="product-footer">
+                <button class="btn-buy"
+                        type="button"
+                        data-merchant="shopee"
+                        data-origin-url="https://shopee.vn/"
+                        data-sku="mxd210-demo-001">
+                  <span class="icon">🛒</span>
+                  Mua trên Shopee (demo)
+                </button>
+                <span class="product-note">Mã: mxd210-demo-001</span>
+              </div>
+            </article>
+
+            <!-- Sản phẩm demo 2 -->
+            <article class="product-card" id="cat-dungcu"
+                     data-sku="mxd210-demo-002"
+                     data-merchant="lazada"
+                     data-origin-url="https://www.lazada.vn/">
+              <div class="product-tag">Dụng cụ cầm tay</div>
+              <div class="product-title">
+                Bộ tua-vít đa năng có đầu đổi, dùng cho nhiều loại ốc vít trong nhà
+              </div>
+              <div class="product-desc">
+                Một bộ tua-vít nhỏ gọn nhưng dùng được cho nhiều đầu khác nhau,
+                giúp xử lý nhanh từ ổ điện, tay nắm cửa cho tới các thiết bị gia dụng.
+              </div>
+              <div class="product-meta">
+                <div class="price-row">
+                  <span class="price-current">≈ 90.000đ</span>
+                  <span class="price-old">110.000đ</span>
+                </div>
+                <span class="price-note">Giá demo, chỉ mang tính minh họa</span>
+              </div>
+              <div class="product-footer">
+                <button class="btn-buy"
+                        type="button"
+                        data-merchant="lazada"
+                        data-origin-url="https://www.lazada.vn/"
+                        data-sku="mxd210-demo-002">
+                  <span class="icon">🛒</span>
+                  Mua trên Lazada (demo)
+                </button>
+                <span class="product-note">Mã: mxd210-demo-002</span>
+              </div>
+            </article>
+
+            <!-- Sản phẩm demo 3 -->
+            <article class="product-card" id="cat-giadung"
+                     data-sku="mxd210-demo-003"
+                     data-merchant="tiki"
+                     data-origin-url="https://tiki.vn/">
+              <div class="product-tag">Gia dụng liên quan hoàn thiện</div>
+              <div class="product-title">
+                Bộ khay nhựa đựng ốc vít, phụ kiện nhỏ cho thợ & chủ nhà tự làm
+              </div>
+              <div class="product-desc">
+                Sau khi sửa chữa xong, ốc vít, phụ kiện lặt vặt thường bị thất lạc.
+                Một bộ khay chia ngăn giúp mọi thứ có chỗ rõ ràng, lần sau cần là thấy ngay.
+              </div>
+              <div class="product-meta">
+                <div class="price-row">
+                  <span class="price-current">≈ 75.000đ</span>
+                  <span class="price-old">95.000đ</span>
+                </div>
+                <span class="price-note">Giá demo, bản thật lấy theo dữ liệu mới nhất</span>
+              </div>
+              <div class="product-footer">
+                <button class="btn-buy"
+                        type="button"
+                        data-merchant="tiki"
+                        data-origin-url="https://tiki.vn/"
+                        data-sku="mxd210-demo-003">
+                  <span class="icon">🛒</span>
+                  Mua trên Tiki (demo)
+                </button>
+                <span class="product-note">Mã: mxd210-demo-003</span>
+              </div>
+            </article>
+
+            <!-- Sản phẩm demo 4 -->
+            <article class="product-card" id="cat-multiplat"
+                     data-sku="mxd210-demo-004"
+                     data-merchant="tiktok"
+                     data-origin-url="https://www.tiktok.com/">
+              <div class="product-tag">Có trên nhiều sàn</div>
+              <div class="product-title">
+                Đèn làm việc gắn bàn, điều chỉnh được góc chiếu – phù hợp cho góc sửa chữa nhỏ
+              </div>
+              <div class="product-desc">
+                Khi cần sửa chữa tinh, ánh sáng đủ và rõ là chuyện rất quan trọng.
+                Một chiếc đèn gắn bàn, chỉnh nhiều góc giúp thao tác chuẩn hơn, đỡ mỏi mắt.
+              </div>
+              <div class="product-meta">
+                <div class="price-row">
+                  <span class="price-current">≈ 220.000đ</span>
+                  <span class="price-old">260.000đ</span>
+                </div>
+                <span class="price-note">Giá demo – bản chính sẽ so từ nhiều sàn</span>
+              </div>
+              <div class="product-footer">
+                <button class="btn-buy"
+                        type="button"
+                        data-merchant="tiktok"
+                        data-origin-url="https://www.tiktok.com/"
+                        data-sku="mxd210-demo-004">
+                  <span class="icon">🛒</span>
+                  Mua trên TikTok (demo)
+                </button>
+                <span class="product-note">Mã: mxd210-demo-004</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MXD210 – Cửa hàng sản phẩm chọn lọc.</div>
+      <div class="footer-links">
+        <span>Khung Canonical v0.1 • Dữ liệu sản phẩm mới là demo</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Giai đoạn demo: các nút Mua chỉ log ra console để kiểm tra.
+  // Khi nối vào mxd-affiliates.js & mxd-buy.js, đoạn này có thể được thay/loại bỏ.
+  const buyButtons = document.querySelectorAll('.btn-buy');
+  buyButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sku = btn.getAttribute('data-sku') || '';
+      const merchant = btn.getAttribute('data-merchant') || '';
+      const origin = btn.getAttribute('data-origin-url') || '';
+      console.log('[MXD210 DEMO] Click mua:', { sku, merchant, origin });
+      alert('Đây là bản demo khung cửa hàng. Link mua thật sẽ được kích hoạt sau khi nối với hệ thống affiliate của MXD210.');
+    });
+  });
+</script>
+</body>
+</html>
