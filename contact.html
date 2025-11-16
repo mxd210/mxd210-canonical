@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+
+  <title>Liên hệ MXD210 – Trao đổi về công trình & sản phẩm</title>
+  <meta name="description" content="Trang liên hệ MXD210 – nơi bạn có thể gửi câu hỏi về thi công, vật tư, phụ kiện và các sản phẩm trong cửa hàng affiliate MXD210."/>
+  <meta name="robots" content="noindex,follow"/>
+
+  <!-- Khi sync sang repo mxd210 chính thức thì chỉnh lại canonical + og:url nếu cần -->
+  <link rel="canonical" href="https://mxd210.github.io/contact.html"/>
+
+  <meta property="og:title" content="Liên hệ MXD210 – Trao đổi về công trình & sản phẩm"/>
+  <meta property="og:description" content="Gửi câu hỏi, hình ảnh hiện trạng hoặc thắc mắc về sản phẩm để MXD210 hỗ trợ sát với nhu cầu thực tế của bạn."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mxd210.github.io/contact.html"/>
+  <meta property="og:image" content="https://mxd210.github.io/assets/img/og-mxd210.webp"/>
+
+  <style>
+    :root{
+      --bg:#f4f4f5;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --border:#e5e7eb;
+      --radius:14px;
+      --shadow:0 8px 30px rgba(15,23,42,.08);
+      --badge-bg:#f3f4f6;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .page{min-height:100vh;display:flex;flex-direction:column}
+
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(16px);
+      background:rgba(244,244,245,.88);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .topbar-inner{
+      max-width:1040px;margin:0 auto;
+      padding:10px 16px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .logo{
+      font-weight:700;letter-spacing:.03em;font-size:18px;
+      display:flex;align-items:center;gap:6px;
+    }
+    .logo span{
+      padding:3px 8px;border-radius:999px;
+      background:var(--accent);color:#fff;font-size:12px;font-weight:600;
+    }
+    .logo-sub{font-size:11px;color:var(--muted)}
+    .nav{
+      display:flex;align-items:center;gap:12px;font-size:13px;
+    }
+    .nav a{
+      padding:6px 10px;border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);white-space:nowrap;
+    }
+    .nav a:hover{
+      border-color:var(--border);background:#fff;color:var(--text);
+    }
+    .nav .nav-primary{
+      background:var(--accent);color:#fff;border-color:transparent;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .nav .nav-primary:hover{transform:translateY(-1px)}
+
+    .main{flex:1}
+    .container{
+      max-width:1040px;margin:0 auto;
+      padding:18px 16px 32px;
+    }
+
+    .hero-contact{
+      display:grid;
+      grid-template-columns:minmax(0,2.7fr) minmax(0,2.3fr);
+      gap:18px;
+      margin-bottom:22px;
+    }
+    @media (max-width:768px){
+      .hero-contact{grid-template-columns:minmax(0,1fr)}
+    }
+    .hero-main{
+      padding:18px 18px 16px;
+      background:linear-gradient(135deg,#eff6ff,#f9fafb);
+      border-radius:20px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+    .hero-pill{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:4px 10px;border-radius:999px;
+      background:var(--accent-soft);color:#1d4ed8;
+      font-size:11px;margin-bottom:10px;font-weight:500;
+    }
+    .hero-pill span{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:16px;height:16px;border-radius:999px;
+      background:#1d4ed8;color:#fff;font-size:11px;
+    }
+    .hero-title{
+      font-size:20px;line-height:1.4;font-weight:700;margin-bottom:6px;
+    }
+    .hero-desc{
+      font-size:13px;line-height:1.6;color:var(--muted);margin-bottom:12px;
+    }
+    .hero-note{
+      font-size:11px;color:#4b5563;margin-bottom:12px;
+    }
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:6px;padding:8px 14px;border-radius:999px;
+      border:1px solid transparent;font-size:13px;
+      font-weight:500;cursor:pointer;transition:all .16s ease;
+    }
+    .btn-main{
+      background:var(--accent);color:#fff;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .btn-main:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 26px rgba(37,99,235,.45);
+    }
+    .btn-ghost{
+      background:#fff;color:#111827;border-color:var(--border);
+    }
+    .btn-ghost:hover{background:#f9fafb}
+    .btn span.icon{font-size:14px}
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:14px 14px 12px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{
+      font-size:14px;margin-bottom:4px;font-weight:600;
+    }
+    .card p{
+      font-size:12px;color:var(--muted);
+      margin-bottom:8px;line-height:1.5;
+    }
+    .tag-row{
+      display:flex;flex-wrap:wrap;gap:6px;
+    }
+    .tag{
+      padding:4px 8px;border-radius:999px;
+      background:#f3f4f6;
+      font-size:11px;color:#4b5563;
+    }
+
+    .section-title{
+      font-size:15px;font-weight:600;margin-bottom:4px;
+    }
+    .section-desc{
+      font-size:12px;color:var(--muted);margin-bottom:10px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.6fr) minmax(0,1.4fr);
+      gap:18px;
+    }
+    @media (max-width:900px){
+      .contact-grid{grid-template-columns:minmax(0,1fr)}
+    }
+    .contact-list{
+      list-style:none;
+      display:flex;flex-direction:column;gap:8px;
+      font-size:12px;
+    }
+    .contact-item{
+      display:flex;align-items:flex-start;gap:8px;
+      padding:8px 9px;border-radius:12px;
+      background:#f9fafb;border:1px solid #e5e7eb;
+    }
+    .contact-icon{
+      width:26px;height:26px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      background:#e5edff;color:#1d4ed8;font-size:14px;
+      flex-shrink:0;
+    }
+    .contact-body strong{display:block;font-size:12px;margin-bottom:2px}
+    .contact-body span{display:block;font-size:11px;color:#6b7280}
+
+    .contact-note{
+      font-size:11px;color:#6b7280;margin-top:6px;
+    }
+
+    .guide-list{
+      list-style:none;
+      display:flex;flex-direction:column;gap:6px;
+      font-size:12px;color:#374151;
+    }
+    .guide-list li{
+      display:flex;align-items:flex-start;gap:6px;
+    }
+    .guide-list span.bullet{
+      width:16px;height:16px;border-radius:999px;
+      background:#22c55e1a;
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;color:#16a34a;margin-top:1px;
+      flex-shrink:0;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background:#f9fafb;
+    }
+    .footer-inner{
+      max-width:1040px;margin:0 auto;
+      padding:10px 16px 14px;
+      display:flex;flex-wrap:wrap;gap:8px;
+      align-items:center;justify-content:space-between;
+      font-size:11px;color:#6b7280;
+    }
+    .footer-links{
+      display:flex;flex-wrap:wrap;gap:10px;
+    }
+  </style>
+
+  <!-- GA4 – sau khi dùng thật, bỏ comment + thay ID
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="logo">
+          MXD<span>210</span>
+        </div>
+        <div class="logo-sub">Giải pháp xây dựng • Cửa hàng affiliate</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="store.html" class="nav-primary">Cửa hàng sản phẩm</a>
+        <a href="blog.html">Blog & Hướng dẫn</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="hero-contact">
+        <div class="hero-main">
+          <div class="hero-pill">
+            <span>✉️</span>
+            Liên hệ khi bạn có bối cảnh thật & nhu cầu rõ ràng
+          </div>
+          <h1 class="hero-title">
+            Liên hệ MXD210 để trao đổi<br/>về công trình, vật tư và sản phẩm
+          </h1>
+          <p class="hero-desc">
+            Mỗi câu hỏi đều gắn với một hiện trạng nhà, một mức ngân sách, một mong muốn rất riêng.
+            MXD210 ưu tiên những trao đổi có đầy đủ bối cảnh để lời tư vấn đi thẳng vào việc bạn cần.
+          </p>
+          <p class="hero-note">
+            Giai đoạn này, thông tin liên hệ cụ thể (Zalo, Facebook, số điện thoại) sẽ được cập nhật
+            khi triển khai trên repo mxd210 chính thức. Tạm thời, bạn có thể dùng những kênh bên dưới
+            như khung mẫu.
+          </p>
+        </div>
+        <div class="card">
+          <h2>Bạn có thể liên hệ khi:</h2>
+          <ul class="guide-list">
+            <li>
+              <span class="bullet">✓</span>
+              <div>Bạn đang phân vân giữa vài phương án thi công / hoàn thiện cụ thể.</div>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <div>Bạn cần gợi ý chọn sản phẩm trong cửa hàng MXD210 sát với tình huống nhà mình.</div>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <div>Bạn muốn hỏi thêm về một bài viết trong blog hoặc một kinh nghiệm có sẵn.</div>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <div>Bạn đang làm affiliate và cần trao đổi thêm về cách sử dụng dữ liệu / công cụ của MXD210.</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section style="margin-bottom:22px;">
+        <h2 class="section-title">Kênh liên hệ (khung mẫu)</h2>
+        <p class="section-desc">
+          Khi triển khai bản chính thức trên mxd210, khu này sẽ được điền bằng link thật. Trên repo
+          Canonical, mình chỉ để khung để sau này copy sang các site khác cho nhanh.
+        </p>
+        <div class="contact-grid">
+          <div class="card">
+            <ul class="contact-list">
+              <li class="contact-item">
+                <div class="contact-icon">📱</div>
+                <div class="contact-body">
+                  <strong>Zalo (gợi ý chính)</strong>
+                  <span>Ưu tiên gửi hình ảnh hiện trạng + vài dòng mô tả. Link Zalo thật sẽ được cập nhật ở bản chính thức.</span>
+                  <span style="margin-top:4px;font-size:11px;color:#9ca3af;">href mẫu: <code>https://zalo.me/...</code></span>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">👤</div>
+                <div class="contact-body">
+                  <strong>Facebook cá nhân / fanpage</strong>
+                  <span>Dùng khi bạn muốn hỏi sâu hơn, hoặc trao đổi thêm về nội dung, hình ảnh, cách triển khai affiliate.</span>
+                  <span style="margin-top:4px;font-size:11px;color:#9ca3af;">href mẫu: <code>https://www.facebook.com/...</code></span>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">☎️</div>
+                <div class="contact-body">
+                  <strong>Số điện thoại</strong>
+                  <span>Dành cho những trường hợp cần trao đổi nhanh. Thường nên nhắn trước để hẹn thời gian cho đỡ trùng lịch công trình.</span>
+                  <span style="margin-top:4px;font-size:11px;color:#9ca3af;">Mẫu: <code>tel:09xxxxxxxx</code></span>
+                </div>
+              </li>
+            </ul>
+            <div class="contact-note">
+              Trên bản chạy thật, mỗi dòng bên trên sẽ được gắn link cụ thể (Zalo, Facebook, số điện thoại)
+              theo thông tin chính thức của MXD210.
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Cách gửi thông tin để được hỗ trợ sát nhất</h2>
+            <ul class="guide-list">
+              <li>
+                <span class="bullet">1</span>
+                <div><strong>Gửi vài tấm hình hiện trạng</strong> – chụp đủ sáng, nhiều góc, tránh quá mờ.</div>
+              </li>
+              <li>
+                <span class="bullet">2</span>
+                <div><strong>Mô tả ngắn gọn mong muốn</strong> – ví dụ: “muốn làm lại khu bếp cho gọn hơn”, “cần chỗ treo đồ trong nhà tắm”...</div>
+              </li>
+              <li>
+                <span class="bullet">3</span>
+                <div><strong>Ước lượng ngân sách bạn thấy hợp lý</strong> – không cần quá chính xác, chỉ để định hướng giải pháp.</div>
+              </li>
+              <li>
+                <span class="bullet">4</span>
+                <div>Nếu câu hỏi liên quan tới <strong>sản phẩm trong cửa hàng MXD210</strong>, hãy gửi kèm link hoặc mã sản phẩm để dễ kiểm tra.</div>
+              </li>
+            </ul>
+            <p class="contact-note">
+              Khi mọi thứ rõ ràng, cả bạn và MXD210 đều tiết kiệm được thời gian, hạn chế việc phải hỏi đi hỏi lại.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MXD210 – Trang liên hệ & trao đổi.</div>
+      <div class="footer-links">
+        <span>Khung Canonical v0.1 • Thông tin liên hệ là placeholder</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
