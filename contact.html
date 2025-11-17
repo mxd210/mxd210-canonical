@@ -18,6 +18,9 @@
   <meta property="og:url" content="https://mxd210.github.io/contact.html"/>
   <meta property="og:image" content="https://mxd210.github.io/assets/img/og-mxd210.webp"/>
 
+  <!-- VERIFY: Google Search Console -->
+  <meta name="google-site-verification" content="84L0tRVs_wNPAyXii38-OaeGi8TyJdMlkZXVIHcnj0o">
+
   <style>
     :root{
       --bg:#f4f4f5;
@@ -65,6 +68,8 @@
     .logo-sub{font-size:11px;color:var(--muted)}
     .nav{
       display:flex;align-items:center;gap:12px;font-size:13px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
     .nav a{
       padding:6px 10px;border-radius:999px;
@@ -252,14 +257,14 @@
     }
   </style>
 
- <!-- GA4: MXD210 – G-SRMVN734DX -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SRMVN734DX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-SRMVN734DX');
-</script>
+  <!-- GA4: MXD210 – G-SRMVN734DX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRMVN734DX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SRMVN734DX');
+  </script>
 
 </head>
 <body>
@@ -274,8 +279,11 @@
       </div>
       <nav class="nav">
         <a href="index.html">Trang chủ</a>
-        <a href="store.html" class="nav-primary">Cửa hàng sản phẩm</a>
-        <a href="blog.html">Tin tức & Hướng dẫn</a>
+        <a href="store.html" class="nav-primary">Cửa hàng</a>
+        <a href="blog-xay-dung.html">Góc xây dựng</a>
+        <a href="affiliate.html">Blog Affiliate</a>
+        <a href="tools.html">Công cụ</a>
+        <a href="about.html">Giới thiệu</a>
         <a href="contact.html">Liên hệ</a>
       </nav>
     </div>
@@ -332,7 +340,7 @@
             </li>
             <li>
               <span class="bullet">3</span>
-              <div>Bạn có câu hỏi liên quan tới một bài viết trong phần Tin tức & Hướng dẫn.</div>
+              <div>Bạn có câu hỏi liên quan tới một bài viết trong phần Góc xây dựng hoặc Blog Affiliate.</div>
             </li>
             <li>
               <span class="bullet">4</span>
@@ -345,7 +353,7 @@
       <section style="margin-bottom:22px;">
         <h2 class="section-title">Các kênh liên hệ đang dùng trên mxd210</h2>
         <p class="section-desc">
-          Những thông tin này lấy trực tiếp từ trang Liên hệ của mxd210. Nếu sau này cậu đổi số, đổi page,
+          Những thông tin này lấy trực tiếp từ trang Liên hệ của mxd210. Nếu sau này đổi số, đổi page,
           chỉ cần sửa một lần ở đây, rồi zip repo đẩy sang là xong.
         </p>
         <div class="contact-grid">
@@ -431,10 +439,10 @@
           <div class="card">
             <h2>GA4 & tracking</h2>
             <ul class="tech-list">
-              <li><strong>GA4 ID (mxd210):</strong> <em>điền vào GTAG phía &lt;head&gt;</em></li>
+              <li><strong>GA4 ID (mxd210):</strong> <code>G-SRMVN734DX</code></li>
               <li>Vị trí GA4: luôn đặt <strong>trước</strong> mọi script affiliate.</li>
               <li>Khung sẵn:
-                <br><code>&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"&gt;&lt;/script&gt;</code>
+                <br><code>&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-SRMVN734DX"&gt;&lt;/script&gt;</code>
               </li>
             </ul>
           </div>
@@ -443,7 +451,7 @@
             <ul class="tech-list">
               <li><strong>Pub ID:</strong> <code>6803097511817356947</code></li>
               <li><strong>Shopee base:</strong><br>
-                <code>https://go.isclix.com/deep_link/6803097511817356947/4751584435713464237/4751584435713464237?url=</code>
+                <code>https://go.isclix.com/deep_link/6803097511817356947/4751584435713464237?url=</code>
               </li>
               <li><strong>Lazada base:</strong><br>
                 <code>https://go.isclix.com/deep_link/6803097511817356947/5127144557053758578?url=</code>
@@ -454,7 +462,7 @@
               <li><strong>Tiki base:</strong><br>
                 <code>https://go.isclix.com/deep_link/6803097511817356947/4348614231480407268?url=</code>
               </li>
-              <li>Dùng chung cho mọi repo thuộc hệ mxd210, script JS sẽ tự gắn <code>utm_*</code> và <code>sub*</code>.</li>
+              <li>Dùng chung cho mọi repo thuộc hệ mxd210; script JS sẽ tự gắn <code>utm_*</code> và <code>sub*</code>.</li>
             </ul>
           </div>
         </div>
