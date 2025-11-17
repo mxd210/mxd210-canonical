@@ -8,7 +8,6 @@
   <meta name="description" content="Cửa hàng MXD210 – tổng hợp các sản phẩm, vật tư, phụ kiện và đồ gia dụng liên quan đến xây dựng, được lựa chọn và sàng lọc kỹ từ nhiều sàn thương mại điện tử."/>
   <meta name="robots" content="noindex,follow"/>
 
-  <!-- Khi sync sang repo mxd210 chính thức thì chỉnh lại canonical + og:url nếu cần -->
   <link rel="canonical" href="https://mxd210.github.io/store.html"/>
 
   <meta property="og:title" content="Cửa hàng MXD210 – Sản phẩm chọn lọc"/>
@@ -258,12 +257,6 @@
       padding:3px 7px;border-radius:999px;
       background:#f3f4f6;color:#4b5563;
     }
-    .product-badge-merchant{
-      display:inline-flex;align-items:center;gap:4px;
-      font-size:10px;
-      padding:3px 6px;border-radius:999px;
-      background:#eff6ff;color:#1d4ed8;
-    }
     .product-title{
       font-size:13px;font-weight:600;line-height:1.4;
       margin-top:2px;
@@ -321,21 +314,14 @@
     }
   </style>
 
-  <!-- GA4 – sau khi dùng thật, bỏ comment + thay ID
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- GA4: MXD210 – G-SRMVN734DX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRMVN734DX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-SRMVN734DX');
   </script>
-  -->
-
-  <!-- Vị trí script affiliate của mxd210 (sau GA4). 
-       Khi đã có file js chuẩn, có thể dùng dạng:
-       <script defer src="./assets/js/mxd-affiliates.js?v=1"></script>
-       <script defer src="./assets/js/mxd-buy.js?v=1"></script>
-  -->
 </head>
 <body>
 <div class="page">
@@ -350,7 +336,8 @@
       <nav class="nav">
         <a href="index.html">Trang chủ</a>
         <a href="store.html" class="nav-primary">Cửa hàng sản phẩm</a>
-        <a href="blog.html">Blog & Hướng dẫn</a>
+        <a href="blog.html">Tin tức &amp; Hướng dẫn</a>
+        <a href="contact.html">Liên hệ</a>
       </nav>
     </div>
   </header>
@@ -372,7 +359,7 @@
           </p>
           <p class="hero-note">
             Giai đoạn này, danh sách mới chỉ là mẫu demo để chuẩn hóa khung. Khi chạy bản chính thức,
-            dữ liệu sẽ được lấy từ file JSON (hoặc công cụ import) theo chuẩn mxd210.
+            dữ liệu sẽ được lấy từ file JSON (hoặc công cụ import) theo chuẩn MXD210.
           </p>
           <div style="display:flex;flex-wrap:wrap;gap:8px;">
             <a href="#products" class="btn btn-main">
@@ -381,13 +368,17 @@
             </a>
             <a href="blog.html" class="btn btn-ghost">
               <span class="icon">📚</span>
-              Đọc hướng dẫn chọn sản phẩm
+              Đọc tin tức &amp; hướng dẫn
+            </a>
+            <a href="contact.html" class="btn btn-ghost">
+              <span class="icon">☎️</span>
+              Cần tư vấn thêm? Liên hệ MXD210
             </a>
           </div>
         </div>
         <div class="hero-side">
           <div class="card">
-            <h2>Sản phẩm liên quan thi công & hoàn thiện</h2>
+            <h2>Sản phẩm liên quan thi công &amp; hoàn thiện</h2>
             <p>
               Từ phụ kiện, dụng cụ nhỏ cho đến những món hỗ trợ hoàn thiện nhà cửa. Ưu tiên những món
               mà khi hư hỏng hoặc thiếu, bạn có thể đặt lại dễ dàng trên các sàn lớn.
@@ -399,14 +390,14 @@
             </div>
           </div>
           <div class="card">
-            <h2>Đồ gia dụng & phụ kiện không gian sống</h2>
+            <h2>Đồ gia dụng &amp; phụ kiện không gian sống</h2>
             <p>
               Những món giúp không gian sống gọn gàng, sạch sẽ hơn, hoặc đơn giản là “đỡ bất tiện”
               trong quá trình sử dụng hằng ngày.
             </p>
             <div class="tag-row">
               <span class="tag">Gia dụng liên quan xây dựng</span>
-              <span class="tag">Sắp xếp & lưu trữ</span>
+              <span class="tag">Sắp xếp &amp; lưu trữ</span>
               <span class="tag">Đồ dùng hỗ trợ bảo trì</span>
             </div>
           </div>
@@ -421,8 +412,8 @@
         </p>
         <div class="filter-row">
           <span class="filter-pill" data-active="true">Tất cả</span>
-          <span class="filter-pill">Vật tư & phụ kiện thi công</span>
-          <span class="filter-pill">Dụng cụ & thiết bị nhỏ</span>
+          <span class="filter-pill">Vật tư &amp; phụ kiện thi công</span>
+          <span class="filter-pill">Dụng cụ &amp; thiết bị nhỏ</span>
           <span class="filter-pill">Gia dụng liên quan xây dựng</span>
           <span class="filter-pill">Sản phẩm xuất hiện trên nhiều sàn</span>
         </div>
@@ -436,13 +427,13 @@
               <ul class="sidebar-list">
                 <li>
                   <a href="#cat-vattu">
-                    <span>Vật tư & phụ kiện công trình</span>
+                    <span>Vật tư &amp; phụ kiện công trình</span>
                     <span class="count">demo</span>
                   </a>
                 </li>
                 <li>
                   <a href="#cat-dungcu">
-                    <span>Dụng cụ & thiết bị nhỏ</span>
+                    <span>Dụng cụ &amp; thiết bị nhỏ</span>
                     <span class="count">demo</span>
                   </a>
                 </li>
@@ -460,14 +451,15 @@
                 </li>
               </ul>
               <div class="sidebar-note">
-                Khi có dữ liệu thật, số lượng từng nhóm sẽ được cập nhật tự động từ JSON của mxd210.
+                Khi có dữ liệu thật, số lượng từng nhóm sẽ được cập nhật tự động từ JSON của MXD210.
               </div>
             </div>
             <div class="sidebar-block">
-              <h3>Lưu ý chung</h3>
+              <h3>Cần hỏi thêm?</h3>
               <div class="sidebar-note">
-                Giá ở đây chỉ là minh họa. Bản chạy thật sẽ đọc từ dữ liệu mới nhất theo từng link
-                (hoặc theo công cụ theo dõi giá sau này).
+                Nếu đang phân vân giữa vài sản phẩm, bạn có thể chụp màn hình &amp; gửi qua
+                <a href="https://zalo.me/0338328898" target="_blank" rel="noopener">Zalo 0338 328 898</a>
+                hoặc xem thêm tại <a href="contact.html">trang Liên hệ</a>.
               </div>
             </div>
           </aside>
@@ -478,9 +470,9 @@
                      data-sku="mxd210-demo-001"
                      data-merchant="shopee"
                      data-origin-url="https://shopee.vn/">
-              <div class="product-tag">Vật tư & phụ kiện</div>
+              <div class="product-tag">Vật tư &amp; phụ kiện</div>
               <div class="product-title">
-                Bộ phụ kiện bắt vít & tắc kê cơ bản cho sửa chữa nhỏ trong nhà
+                Bộ phụ kiện bắt vít &amp; tắc kê cơ bản cho sửa chữa nhỏ trong nhà
               </div>
               <div class="product-desc">
                 Phù hợp cho các việc lặt vặt: treo kệ, cố định lại bản lề, lắp thêm vài móc treo...
@@ -546,7 +538,7 @@
                      data-origin-url="https://tiki.vn/">
               <div class="product-tag">Gia dụng liên quan hoàn thiện</div>
               <div class="product-title">
-                Bộ khay nhựa đựng ốc vít, phụ kiện nhỏ cho thợ & chủ nhà tự làm
+                Bộ khay nhựa đựng ốc vít, phụ kiện nhỏ cho thợ &amp; chủ nhà tự làm
               </div>
               <div class="product-desc">
                 Sau khi sửa chữa xong, ốc vít, phụ kiện lặt vặt thường bị thất lạc.
@@ -614,7 +606,7 @@
     <div class="footer-inner">
       <div>© <span id="year"></span> MXD210 – Cửa hàng sản phẩm chọn lọc.</div>
       <div class="footer-links">
-        <span>Khung Canonical v0.1 • Dữ liệu sản phẩm mới là demo</span>
+        <span>Canonical v0.1 • Dữ liệu sản phẩm mới là demo</span>
       </div>
     </div>
   </footer>
