@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "may-moc-xay-dung",
+    "name": "Máy móc xây dựng",
+    "description": "Máy móc phục vụ thi công: máy trộn, máy cắt, máy khoan, máy hàn… phù hợp công trình nhỏ tới vừa.",
+    "icon": "/assets/img/categories/may-moc-xay-dung.webp",
+    "seo_title": "Máy móc xây dựng – thiết bị phục vụ thi công",
+    "seo_description": "Tuyển chọn máy móc xây dựng như máy trộn bê tông, máy cắt, máy khoan, máy hàn… phù hợp đội thợ và công trình dân dụng.",
+    "priority": 1,
+    "tags": ["máy trộn bê tông", "máy cắt", "máy khoan", "máy hàn", "máy công trình"]
+  },
+  {
+    "slug": "dung-cu-vat-tu-xay-dung",
+    "name": "Dụng cụ & vật tư xây dựng",
+    "description": "Các loại dụng cụ, vật tư nhỏ phục vụ thi công, sửa chữa và hoàn thiện công trình.",
+    "icon": "/assets/img/categories/dung-cu-vat-tu-xay-dung.webp",
+    "seo_title": "Dụng cụ & vật tư xây dựng – đồ nghề cho thợ",
+    "seo_description": "Dụng cụ cầm tay, nivo, thước đo, máy laser, bulong, ốc vít và vật tư phụ trợ cho thi công và sửa chữa xây dựng.",
+    "priority": 2,
+    "tags": ["dụng cụ xây dựng", "vật tư xây dựng", "đồ nghề thợ xây"]
+  },
+  {
+    "slug": "thoi-trang-nu",
+    "name": "Thời trang nữ",
+    "description": "Đồ nữ dễ mặc, dễ phối – từ áo sơ mi, áo phông tới váy vóc đi làm, đi chơi.",
+    "icon": "/assets/img/categories/thoi-trang-nu.webp",
+    "seo_title": "Thời trang nữ – đồ đẹp, dễ phối, hợp túi tiền",
+    "seo_description": "Góc thời trang nữ chọn lọc: áo sơ mi, áo phông, váy liền, chân váy… phù hợp nhiều độ tuổi, ưu tiên chất vải và form dáng dễ mặc.",
+    "priority": 3,
+    "tags": ["áo sơ mi nữ", "áo thun nữ", "váy nữ", "đồ công sở nữ"]
+  },
+  {
+    "slug": "thoi-trang-nam",
+    "name": "Thời trang nam",
+    "description": "Quần áo nam basic, gọn gàng, dễ mặc hằng ngày.",
+    "icon": "/assets/img/categories/thoi-trang-nam.webp",
+    "seo_title": "Thời trang nam basic, dễ phối mỗi ngày",
+    "seo_description": "Quần jean, quần tây, áo sơ mi, áo polo, áo thun… dành cho nam, ưu tiên form dễ mặc, tôn dáng mà vẫn thoải mái.",
+    "priority": 4,
+    "tags": ["áo sơ mi nam", "áo polo", "quần jean nam", "áo thun nam"]
+  },
+  {
+    "slug": "my-pham-lam-dep",
+    "name": "Mỹ phẩm & làm đẹp",
+    "description": "Skincare, makeup và các sản phẩm chăm sóc da, tóc, cơ thể.",
+    "icon": "/assets/img/categories/my-pham-lam-dep.webp",
+    "seo_title": "Mỹ phẩm & làm đẹp – chọn lọc dễ dùng",
+    "seo_description": "Tổng hợp mỹ phẩm chăm sóc da, tóc, body và makeup cơ bản – ưu tiên những món dễ dùng, phù hợp thói quen của người Việt.",
+    "priority": 5,
+    "tags": ["skincare", "makeup", "kem dưỡng", "sữa rửa mặt"]
+  },
+  {
+    "slug": "trang-suc-phu-kien",
+    "name": "Trang sức & phụ kiện",
+    "description": "Trang sức và phụ kiện nhỏ giúp hoàn thiện set đồ mỗi ngày.",
+    "icon": "/assets/img/categories/trang-suc-phu-kien.webp",
+    "seo_title": "Trang sức & phụ kiện – điểm nhấn cho phong cách",
+    "seo_description": "Dây chuyền, nhẫn, vòng tay, bông tai, phụ kiện tóc, thắt lưng, kính… giúp set đồ trông chỉn chu và có điểm nhấn hơn.",
+    "priority": 6,
+    "tags": ["trang sức", "phụ kiện", "bông tai", "vòng tay", "dây chuyền"]
+  },
+  {
+    "slug": "do-dien-tu-cong-nghe",
+    "name": "Đồ điện tử & công nghệ",
+    "description": "Phụ kiện công nghệ và thiết bị điện tử nhỏ phục vụ làm việc, giải trí.",
+    "icon": "/assets/img/categories/do-dien-tu-cong-nghe.webp",
+    "seo_title": "Đồ điện tử & công nghệ – phụ kiện tiện dụng",
+    "seo_description": "Tai nghe, loa, chuột, bàn phím, phụ kiện điện thoại, thiết bị smart home nhỏ… phục vụ nhu cầu làm việc và giải trí hằng ngày.",
+    "priority": 7,
+    "tags": ["tai nghe", "loa", "phụ kiện điện thoại", "chuột", "bàn phím"]
+  },
+  {
+    "slug": "dien-gia-dung",
+    "name": "Điện gia dụng",
+    "description": "Thiết bị điện gia dụng nhỏ gọn dùng trong bếp và sinh hoạt hằng ngày.",
+    "icon": "/assets/img/categories/dien-gia-dung.webp",
+    "seo_title": "Điện gia dụng – đồ nhỏ mà tiện",
+    "seo_description": "Nồi chiên không dầu, máy xay, máy ép, ấm siêu tốc, máy hút bụi mini… giúp việc bếp núc và dọn dẹp nhẹ nhàng hơn.",
+    "priority": 8,
+    "tags": ["nồi chiên không dầu", "máy xay", "máy ép", "ấm siêu tốc"]
+  },
+  {
+    "slug": "gia-dung-nha-cua",
+    "name": "Gia dụng & decor nhà cửa",
+    "description": "Đồ gia dụng và decor giúp nhà cửa gọn gàng, thoải mái hơn.",
+    "icon": "/assets/img/categories/gia-dung-nha-cua.webp",
+    "seo_title": "Gia dụng & decor – sắp xếp nhà cửa gọn gàng",
+    "seo_description": "Kệ, hộp, móc treo, hộp đựng, đồ decor nhỏ… giúp tối ưu không gian và làm nhà cửa gọn mắt hơn.",
+    "priority": 9,
+    "tags": ["đồ gia dụng", "decor", "tối ưu không gian", "kệ treo"]
+  },
+  {
+    "slug": "me-va-be",
+    "name": "Mẹ & Bé",
+    "description": "Đồ cho mẹ và bé: quần áo, phụ kiện, đồ dùng hằng ngày.",
+    "icon": "/assets/img/categories/me-va-be.webp",
+    "seo_title": "Mẹ & Bé – đồ dùng chọn lọc, ưu tiên an toàn",
+    "seo_description": "Sản phẩm cho mẹ và bé: quần áo, đồ sơ sinh, phụ kiện chăm sóc, đồ dùng tiện ích… chú trọng an toàn và dễ sử dụng.",
+    "priority": 10,
+    "tags": ["quần áo em bé", "đồ sơ sinh", "đồ cho mẹ", "đồ cho bé"]
+  },
+  {
+    "slug": "suc-khoe-tpcn",
+    "name": "Sức khỏe & thực phẩm chức năng",
+    "description": "Một số sản phẩm hỗ trợ sức khỏe, vitamin, thực phẩm chức năng.",
+    "icon": "/assets/img/categories/suc-khoe-tpcn.webp",
+    "seo_title": "Sức khỏe & thực phẩm chức năng – ưu tiên an toàn",
+    "seo_description": "Thực phẩm chức năng, vitamin, sản phẩm hỗ trợ sức khỏe… được chọn theo tiêu chí rõ nguồn gốc và được nhiều người tin dùng.",
+    "priority": 11,
+    "tags": ["thực phẩm chức năng", "vitamin", "hỗ trợ sức khỏe"]
+  },
+  {
+    "slug": "do-an-do-uong",
+    "name": "Đồ ăn & đồ uống",
+    "description": "Đồ ăn vặt, đồ uống và nguyên liệu pha chế đơn giản.",
+    "icon": "/assets/img/categories/do-an-do-uong.webp",
+    "seo_title": "Đồ ăn & đồ uống – tiện lợi, dễ dùng",
+    "seo_description": "Đồ ăn vặt, bánh kẹo, thức uống đóng chai, bột pha, nguyên liệu pha chế… phù hợp dùng hằng ngày hoặc đãi bạn bè.",
+    "priority": 12,
+    "tags": ["đồ ăn vặt", "bánh kẹo", "đồ uống", "nguyên liệu pha chế"]
+  },
+  {
+    "slug": "sach",
+    "name": "Sách",
+    "description": "Sách về phát triển bản thân, tài chính, kỹ năng và đời sống.",
+    "icon": "/assets/img/categories/sach.webp",
+    "seo_title": "Sách hay – dễ đọc, dễ áp dụng",
+    "seo_description": "Tổng hợp sách về phát triển bản thân, kinh doanh, tài chính cá nhân, kỹ năng sống… được nhiều người nhắc tới và đánh giá tốt.",
+    "priority": 13,
+    "tags": ["sách kỹ năng", "sách kinh doanh", "sách phát triển bản thân"]
+  },
+  {
+    "slug": "san-pham-so-khoa-hoc",
+    "name": "Sản phẩm số & khóa học",
+    "description": "E-book, file số, template, khóa học online về nhiều chủ đề.",
+    "icon": "/assets/img/categories/san-pham-so-khoa-hoc.webp",
+    "seo_title": "Sản phẩm số & khóa học online",
+    "seo_description": "E-book, tài liệu số, template, khóa học online về kinh doanh, marketing, kỹ năng và phát triển bản thân – phù hợp người bận rộn.",
+    "priority": 14,
+    "tags": ["khóa học online", "ebook", "template", "tài liệu số"]
+  }
+]
