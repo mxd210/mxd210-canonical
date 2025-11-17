@@ -6,9 +6,10 @@
 
   <title>Liên hệ MXD210 – Trao đổi về công trình & sản phẩm</title>
   <meta name="description" content="Trang liên hệ MXD210 – nơi bạn có thể gửi câu hỏi về thi công, vật tư, phụ kiện và các sản phẩm trong cửa hàng affiliate MXD210."/>
+
+  <!-- Repo canonical đang ở dạng rebuild; khi đưa sang mxd210 chính nếu muốn index thì đổi thành index,follow -->
   <meta name="robots" content="noindex,follow"/>
 
-  <!-- Khi sync sang repo mxd210 chính thức thì chỉnh lại canonical + og:url nếu cần -->
   <link rel="canonical" href="https://mxd210.github.io/contact.html"/>
 
   <meta property="og:title" content="Liên hệ MXD210 – Trao đổi về công trình & sản phẩm"/>
@@ -156,14 +157,6 @@
       font-size:12px;color:var(--muted);
       margin-bottom:8px;line-height:1.5;
     }
-    .tag-row{
-      display:flex;flex-wrap:wrap;gap:6px;
-    }
-    .tag{
-      padding:4px 8px;border-radius:999px;
-      background:#f3f4f6;
-      font-size:11px;color:#4b5563;
-    }
 
     .section-title{
       font-size:15px;font-weight:600;margin-bottom:4px;
@@ -176,10 +169,12 @@
       display:grid;
       grid-template-columns:minmax(0,1.6fr) minmax(0,1.4fr);
       gap:18px;
+      margin-bottom:22px;
     }
     @media (max-width:900px){
       .contact-grid{grid-template-columns:minmax(0,1fr)}
     }
+
     .contact-list{
       list-style:none;
       display:flex;flex-direction:column;gap:8px;
@@ -199,10 +194,6 @@
     .contact-body strong{display:block;font-size:12px;margin-bottom:2px}
     .contact-body span{display:block;font-size:11px;color:#6b7280}
 
-    .contact-note{
-      font-size:11px;color:#6b7280;margin-top:6px;
-    }
-
     .guide-list{
       list-style:none;
       display:flex;flex-direction:column;gap:6px;
@@ -217,6 +208,32 @@
       display:flex;align-items:center;justify-content:center;
       font-size:11px;color:#16a34a;margin-top:1px;
       flex-shrink:0;
+    }
+
+    .tech-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.4fr) minmax(0,1.6fr);
+      gap:18px;
+    }
+    @media (max-width:900px){
+      .tech-grid{grid-template-columns:minmax(0,1fr)}
+    }
+    .tech-list{
+      list-style:none;
+      font-size:11px;
+      display:flex;flex-direction:column;gap:4px;
+      color:#374151;
+    }
+    .tech-list code{
+      font-family:ui-monospace,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size:11px;
+      background:#111827;
+      color:#e5e7eb;
+      padding:2px 4px;
+      border-radius:4px;
+      display:inline-block;
+      max-width:100%;
+      overflow-wrap:anywhere;
     }
 
     footer{
@@ -235,15 +252,15 @@
     }
   </style>
 
-  <!-- GA4 – sau khi dùng thật, bỏ comment + thay ID
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
+ <!-- GA4: MXD210 – G-SRMVN734DX -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SRMVN734DX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SRMVN734DX');
+</script>
+
 </head>
 <body>
 <div class="page">
@@ -258,7 +275,7 @@
       <nav class="nav">
         <a href="index.html">Trang chủ</a>
         <a href="store.html" class="nav-primary">Cửa hàng sản phẩm</a>
-        <a href="blog.html">Blog & Hướng dẫn</a>
+        <a href="blog.html">Tin tức & Hướng dẫn</a>
         <a href="contact.html">Liên hệ</a>
       </nav>
     </div>
@@ -276,43 +293,60 @@
             Liên hệ MXD210 để trao đổi<br/>về công trình, vật tư và sản phẩm
           </h1>
           <p class="hero-desc">
-            Mỗi câu hỏi đều gắn với một hiện trạng nhà, một mức ngân sách, một mong muốn rất riêng.
-            MXD210 ưu tiên những trao đổi có đầy đủ bối cảnh để lời tư vấn đi thẳng vào việc bạn cần.
+            Mỗi câu hỏi đều gắn với hiện trạng nhà, ngân sách và mong muốn rất riêng. MXD210 ưu tiên
+            những trao đổi có đủ bối cảnh để gợi ý đi thẳng vào việc bạn đang cần xử lý.
           </p>
           <p class="hero-note">
-            Giai đoạn này, thông tin liên hệ cụ thể (Zalo, Facebook, số điện thoại) sẽ được cập nhật
-            khi triển khai trên repo mxd210 chính thức. Tạm thời, bạn có thể dùng những kênh bên dưới
-            như khung mẫu.
+            Các kênh dưới đây là thông tin đang dùng trên mxd210: Zalo, Facebook, số điện thoại, email.
+            Khi clone sang site khác, chỉ việc thay đúng 4 dòng là xong.
           </p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
+            <a href="https://zalo.me/0338328898" target="_blank" rel="noopener" class="btn btn-main">
+              <span class="icon">📱</span>
+              Nhắn Zalo 0338 328 898
+            </a>
+            <a href="https://facebook.com/mxd6686" target="_blank" rel="noopener" class="btn btn-ghost">
+              <span class="icon">👤</span>
+              Facebook mxd6686
+            </a>
+            <a href="tel:0338328898" class="btn btn-ghost">
+              <span class="icon">☎️</span>
+              Gọi 0338 328 898
+            </a>
+            <a href="mailto:mxd.support@gmail.com" class="btn btn-ghost">
+              <span class="icon">✉️</span>
+              Gửi email mxd.support@gmail.com
+            </a>
+          </div>
         </div>
         <div class="card">
-          <h2>Bạn có thể liên hệ khi:</h2>
+          <h2>Khi nào nên liên hệ MXD210?</h2>
           <ul class="guide-list">
             <li>
-              <span class="bullet">✓</span>
-              <div>Bạn đang phân vân giữa vài phương án thi công / hoàn thiện cụ thể.</div>
+              <span class="bullet">1</span>
+              <div>Bạn đang phân vân giữa vài phương án thi công / hoàn thiện và muốn nghe thêm một góc nhìn thực tế.</div>
             </li>
             <li>
-              <span class="bullet">✓</span>
-              <div>Bạn cần gợi ý chọn sản phẩm trong cửa hàng MXD210 sát với tình huống nhà mình.</div>
+              <span class="bullet">2</span>
+              <div>Bạn cần gợi ý sản phẩm trong cửa hàng MXD210 sát với tình huống nhà mình.</div>
             </li>
             <li>
-              <span class="bullet">✓</span>
-              <div>Bạn muốn hỏi thêm về một bài viết trong blog hoặc một kinh nghiệm có sẵn.</div>
+              <span class="bullet">3</span>
+              <div>Bạn có câu hỏi liên quan tới một bài viết trong phần Tin tức & Hướng dẫn.</div>
             </li>
             <li>
-              <span class="bullet">✓</span>
-              <div>Bạn đang làm affiliate và cần trao đổi thêm về cách sử dụng dữ liệu / công cụ của MXD210.</div>
+              <span class="bullet">4</span>
+              <div>Bạn đang làm affiliate, muốn trao đổi thêm về cách tận dụng dữ liệu / công cụ của MXD210.</div>
             </li>
           </ul>
         </div>
       </section>
 
       <section style="margin-bottom:22px;">
-        <h2 class="section-title">Kênh liên hệ (khung mẫu)</h2>
+        <h2 class="section-title">Các kênh liên hệ đang dùng trên mxd210</h2>
         <p class="section-desc">
-          Khi triển khai bản chính thức trên mxd210, khu này sẽ được điền bằng link thật. Trên repo
-          Canonical, mình chỉ để khung để sau này copy sang các site khác cho nhanh.
+          Những thông tin này lấy trực tiếp từ trang Liên hệ của mxd210. Nếu sau này cậu đổi số, đổi page,
+          chỉ cần sửa một lần ở đây, rồi zip repo đẩy sang là xong.
         </p>
         <div class="contact-grid">
           <div class="card">
@@ -320,57 +354,108 @@
               <li class="contact-item">
                 <div class="contact-icon">📱</div>
                 <div class="contact-body">
-                  <strong>Zalo (gợi ý chính)</strong>
-                  <span>Ưu tiên gửi hình ảnh hiện trạng + vài dòng mô tả. Link Zalo thật sẽ được cập nhật ở bản chính thức.</span>
-                  <span style="margin-top:4px;font-size:11px;color:#9ca3af;">href mẫu: <code>https://zalo.me/...</code></span>
+                  <strong>Zalo – kênh ưu tiên</strong>
+                  <span>Nhắn kèm hình ảnh hiện trạng, kích thước sơ bộ, mong muốn… để đi vào việc nhanh hơn.</span>
+                  <span style="margin-top:4px;font-size:11px;color:#1d4ed8;">
+                    <a href="https://zalo.me/0338328898" target="_blank" rel="noopener">
+                      Zalo: 0338 328 898
+                    </a>
+                  </span>
                 </div>
               </li>
               <li class="contact-item">
                 <div class="contact-icon">👤</div>
                 <div class="contact-body">
-                  <strong>Facebook cá nhân / fanpage</strong>
-                  <span>Dùng khi bạn muốn hỏi sâu hơn, hoặc trao đổi thêm về nội dung, hình ảnh, cách triển khai affiliate.</span>
-                  <span style="margin-top:4px;font-size:11px;color:#9ca3af;">href mẫu: <code>https://www.facebook.com/...</code></span>
+                  <strong>Facebook</strong>
+                  <span>Dùng khi cần gửi nhiều thông tin hơn, hoặc muốn inbox trao đổi chậm rãi.</span>
+                  <span style="margin-top:4px;font-size:11px;color:#1d4ed8;">
+                    <a href="https://facebook.com/mxd6686" target="_blank" rel="noopener">
+                      facebook.com/mxd6686
+                    </a>
+                  </span>
                 </div>
               </li>
               <li class="contact-item">
                 <div class="contact-icon">☎️</div>
                 <div class="contact-body">
-                  <strong>Số điện thoại</strong>
-                  <span>Dành cho những trường hợp cần trao đổi nhanh. Thường nên nhắn trước để hẹn thời gian cho đỡ trùng lịch công trình.</span>
-                  <span style="margin-top:4px;font-size:11px;color:#9ca3af;">Mẫu: <code>tel:09xxxxxxxx</code></span>
+                  <strong>Điện thoại</strong>
+                  <span>Phù hợp khi việc đang gấp. Lý tưởng nhất là nhắn trước một tin ngắn qua Zalo rồi hẹn giờ gọi.</span>
+                  <span style="margin-top:4px;font-size:11px;color:#1d4ed8;">
+                    <a href="tel:0338328898">Gọi: 0338 328 898</a>
+                  </span>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-body">
+                  <strong>Email</strong>
+                  <span>Cho các nội dung cần lưu trữ, tài liệu, báo giá, file đính kèm…</span>
+                  <span style="margin-top:4px;font-size:11px;color:#1d4ed8;">
+                    <a href="mailto:mxd.support@gmail.com">mxd.support@gmail.com</a>
+                  </span>
                 </div>
               </li>
             </ul>
-            <div class="contact-note">
-              Trên bản chạy thật, mỗi dòng bên trên sẽ được gắn link cụ thể (Zalo, Facebook, số điện thoại)
-              theo thông tin chính thức của MXD210.
-            </div>
           </div>
 
           <div class="card">
             <h2>Cách gửi thông tin để được hỗ trợ sát nhất</h2>
             <ul class="guide-list">
               <li>
-                <span class="bullet">1</span>
-                <div><strong>Gửi vài tấm hình hiện trạng</strong> – chụp đủ sáng, nhiều góc, tránh quá mờ.</div>
+                <span class="bullet">✓</span>
+                <div><strong>Gửi vài tấm hình hiện trạng</strong> – chụp rõ, nhiều góc, ưu tiên đủ sáng.</div>
               </li>
               <li>
-                <span class="bullet">2</span>
-                <div><strong>Mô tả ngắn gọn mong muốn</strong> – ví dụ: “muốn làm lại khu bếp cho gọn hơn”, “cần chỗ treo đồ trong nhà tắm”...</div>
+                <span class="bullet">✓</span>
+                <div><strong>Ghi ngắn gọn mong muốn</strong> – ví dụ: “muốn làm lại góc bếp gọn hơn”, “cần chỗ treo đồ mà không khoan tường”…</div>
               </li>
               <li>
-                <span class="bullet">3</span>
-                <div><strong>Ước lượng ngân sách bạn thấy hợp lý</strong> – không cần quá chính xác, chỉ để định hướng giải pháp.</div>
+                <span class="bullet">✓</span>
+                <div><strong>Ước lượng ngân sách thấy ổn</strong> – không cần chính xác, chỉ để định khung giải pháp.</div>
               </li>
               <li>
-                <span class="bullet">4</span>
-                <div>Nếu câu hỏi liên quan tới <strong>sản phẩm trong cửa hàng MXD210</strong>, hãy gửi kèm link hoặc mã sản phẩm để dễ kiểm tra.</div>
+                <span class="bullet">✓</span>
+                <div>Nếu liên quan tới <strong>sản phẩm trong cửa hàng MXD210</strong>, gửi kèm link hoặc mã sản phẩm trên site.</div>
               </li>
             </ul>
-            <p class="contact-note">
-              Khi mọi thứ rõ ràng, cả bạn và MXD210 đều tiết kiệm được thời gian, hạn chế việc phải hỏi đi hỏi lại.
-            </p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-bottom:10px;">
+        <h2 class="section-title">Thông tin kỹ thuật MXD210 (để dựng hệ thống & clone site)</h2>
+        <p class="section-desc">
+          Khu này dành cho chính mình và các repo clone – người dùng bình thường không cần quan tâm.
+        </p>
+        <div class="tech-grid">
+          <div class="card">
+            <h2>GA4 & tracking</h2>
+            <ul class="tech-list">
+              <li><strong>GA4 ID (mxd210):</strong> <em>điền vào GTAG phía &lt;head&gt;</em></li>
+              <li>Vị trí GA4: luôn đặt <strong>trước</strong> mọi script affiliate.</li>
+              <li>Khung sẵn:
+                <br><code>&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"&gt;&lt;/script&gt;</code>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>AccessTrade aff_base của mxd210</h2>
+            <ul class="tech-list">
+              <li><strong>Pub ID:</strong> <code>6803097511817356947</code></li>
+              <li><strong>Shopee base:</strong><br>
+                <code>https://go.isclix.com/deep_link/6803097511817356947/4751584435713464237/4751584435713464237?url=</code>
+              </li>
+              <li><strong>Lazada base:</strong><br>
+                <code>https://go.isclix.com/deep_link/6803097511817356947/5127144557053758578?url=</code>
+              </li>
+              <li><strong>TikTok base:</strong><br>
+                <code>https://go.isclix.com/deep_link/6803097511817356947/6648523843406889655?url=</code>
+              </li>
+              <li><strong>Tiki base:</strong><br>
+                <code>https://go.isclix.com/deep_link/6803097511817356947/4348614231480407268?url=</code>
+              </li>
+              <li>Dùng chung cho mọi repo thuộc hệ mxd210, script JS sẽ tự gắn <code>utm_*</code> và <code>sub*</code>.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -381,7 +466,7 @@
     <div class="footer-inner">
       <div>© <span id="year"></span> MXD210 – Trang liên hệ & trao đổi.</div>
       <div class="footer-links">
-        <span>Khung Canonical v0.1 • Thông tin liên hệ là placeholder</span>
+        <span>Canonical rebuild • Điền GA4 là dùng lại cho mxd210 được ngay</span>
       </div>
     </div>
   </footer>
