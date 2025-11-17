@@ -2,17 +2,314 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
 
   <title>Góc xây dựng – Chia sẻ kinh nghiệm thi công | MXD210</title>
   <meta name="description" content="Góc xây dựng MXD210 – nơi chia sẻ kinh nghiệm thi công, mẹo xử lý hiện trường và những bài học xương máu trong nghề.">
   <link rel="canonical" href="https://mxd210.github.io/blog-xay-dung.html"/>
-  <meta name="robots" content="index,follow"/>
+
+  <!-- Giai đoạn REBUILD trên repo thử nghiệm: tránh index.
+       Khi đưa mã này lên repo mxd210 chính, cậu có thể đổi thành index,follow nếu muốn. -->
+  <meta name="robots" content="noindex,follow"/>
 
   <!-- VERIFY: Google Search Console -->
   <meta name="google-site-verification" content="84L0tRVs_wNPAyXii38-OaeGi8TyJdMlkZXVIHcnj0o">
 
-  <!-- Google Analytics 4 -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Góc xây dựng – Chia sẻ kinh nghiệm thi công | MXD210"/>
+  <meta property="og:description" content="Nơi gom lại kinh nghiệm thi công, xử lý hiện trường và những bài học xương máu trong nghề xây dựng của MXD210."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mxd210.github.io/blog-xay-dung.html"/>
+  <meta property="og:image" content="https://mxd210.github.io/assets/img/og-mxd210.webp"/>
+
+  <style>
+    :root{
+      --bg:#f4f4f5;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --border:#e5e7eb;
+      --radius:14px;
+      --shadow:0 8px 30px rgba(15,23,42,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* TOPBAR + NAV giống các trang khác */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter:blur(16px);
+      background:rgba(244,244,245,.88);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .topbar-inner{
+      max-width:1040px;
+      margin:0 auto;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .logo{
+      font-weight:700;
+      letter-spacing:.03em;
+      font-size:18px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .logo span{
+      padding:3px 8px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#fff;
+      font-size:12px;
+      font-weight:600;
+    }
+    .logo-sub{
+      font-size:11px;
+      color:var(--muted);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:13px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .nav a:hover{
+      border-color:var(--border);
+      background:#fff;
+      color:var(--text);
+    }
+    .nav .nav-primary{
+      background:var(--accent);
+      color:#fff;
+      border-color:transparent;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .nav .nav-primary:hover{
+      transform:translateY(-1px);
+    }
+
+    .main{
+      flex:1;
+    }
+    .container{
+      max-width:1040px;
+      margin:0 auto;
+      padding:18px 16px 32px;
+    }
+
+    .blog-hero{
+      margin-bottom:18px;
+    }
+    .blog-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:#1d4ed8;
+      font-size:11px;
+      margin-bottom:8px;
+      font-weight:500;
+    }
+    .blog-pill span{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:16px;
+      height:16px;
+      border-radius:999px;
+      background:#1d4ed8;
+      color:#fff;
+      font-size:11px;
+    }
+    .blog-title{
+      font-size:22px;
+      line-height:1.3;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .blog-desc{
+      font-size:13px;
+      line-height:1.6;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .blog-note{
+      font-size:11px;
+      color:#4b5563;
+    }
+
+    .blog-layout{
+      display:grid;
+      grid-template-columns:minmax(0,2.7fr) minmax(0,2.1fr);
+      gap:18px;
+    }
+    @media (max-width:900px){
+      .blog-layout{
+        grid-template-columns:minmax(0,1fr);
+      }
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:14px 14px 12px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{
+      font-size:14px;
+      margin-bottom:4px;
+      font-weight:600;
+    }
+    .card p{
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:8px;
+      line-height:1.5;
+    }
+
+    .post-list{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .post-card{
+      border-radius:12px;
+      border:1px solid var(--border);
+      padding:10px 11px;
+      background:#f9fafb;
+    }
+    .post-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      font-size:11px;
+      color:#6b7280;
+      margin-bottom:4px;
+    }
+    .post-meta span{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+    }
+    .post-title{
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:4px;
+    }
+    .post-excerpt{
+      font-size:12px;
+      color:#4b5563;
+      line-height:1.5;
+      margin-bottom:4px;
+    }
+    .post-link{
+      font-size:11px;
+      color:#2563eb;
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:4px;
+    }
+    .tag{
+      padding:4px 8px;
+      border-radius:999px;
+      background:#f3f4f6;
+      font-size:11px;
+      color:#4b5563;
+    }
+
+    .sidebar-section{
+      font-size:12px;
+      color:#374151;
+    }
+    .sidebar-section h3{
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:4px;
+    }
+    .sidebar-section p{
+      font-size:12px;
+      color:#6b7280;
+      margin-bottom:6px;
+      line-height:1.5;
+    }
+    .sidebar-note{
+      font-size:11px;
+      color:#9ca3af;
+    }
+    .sidebar-list{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      margin-top:4px;
+    }
+    .sidebar-list a{
+      font-size:12px;
+      color:#2563eb;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background:#f9fafb;
+    }
+    .footer-inner{
+      max-width:1040px;
+      margin:0 auto;
+      padding:10px 16px 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+      font-size:11px;
+      color:#6b7280;
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+  </style>
+
+  <!-- Google Analytics 4: MXD210 – G-SRMVN734DX -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRMVN734DX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,41 +317,148 @@
     gtag('js', new Date());
     gtag('config', 'G-SRMVN734DX');
   </script>
-
-  <!-- TODO: nếu có CSS/JS chung (style.css, main.js...) thì thêm ở đây -->
 </head>
 <body>
-<header class="site-header">
-  <div class="container">
-    <a href="/" class="logo">
-      <span class="logo-main">MXD210</span>
-      <span class="logo-sub">Xây dựng & Affiliate</span>
-    </a>
+<div class="page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="logo">
+          MXD<span>210</span>
+        </div>
+        <div class="logo-sub">Giải pháp xây dựng • Cửa hàng affiliate</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="store.html">Cửa hàng</a>
+        <a href="blog-xay-dung.html" class="nav-primary">Góc xây dựng</a>
+        <a href="affiliate.html">Blog Affiliate</a>
+        <a href="tools.html">Công cụ</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
 
-    <nav class="main-nav">
-      <ul>
-        <li><a href="/" data-nav="home">Trang chủ</a></li>
-        <li><a href="/store.html" data-nav="store">Cửa hàng</a></li>
-        <li><a href="/blog-xay-dung.html" data-nav="blog-xd">Góc xây dựng</a></li>
-        <li><a href="/affiliate.html" data-nav="blog-aff">Blog Affiliate</a></li>
-        <li><a href="/tools.html" data-nav="tools">Công cụ</a></li>
-        <li><a href="/about.html" data-nav="about">Giới thiệu</a></li>
-        <li><a href="/contact.html" data-nav="contact">Liên hệ</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <main class="main">
+    <div class="container">
+      <section class="blog-hero">
+        <div class="blog-pill">
+          <span>🧱</span>
+          Góc xây dựng – nội dung từ hiện trường thật
+        </div>
+        <h1 class="blog-title">Góc xây dựng – Chia sẻ kinh nghiệm thi công</h1>
+        <p class="blog-desc">
+          Đây là khu mình gom lại những trải nghiệm khi đi công trình: lỗi đã từng gặp, cách xử lý,
+          mẹo nhỏ khi thi công và những bài học xương máu trong nghề. Mục tiêu là giúp những ai
+          đang chuẩn bị làm nhà, sửa nhà hoặc làm nghề có thêm góc nhìn thực tế, dễ hiểu.
+        </p>
+        <p class="blog-note">
+          Giai đoạn đầu, MXD210 sẽ cập nhật dần từng bài. Khi đủ “độ dày”, các bài sẽ được gom lại
+          thành nhóm chủ đề: chống thấm, điện nước, hoàn thiện, đồ nội thất lắp ráp...
+        </p>
+      </section>
 
-<main class="page-main">
-  <section class="page-hero container">
-    <h1>Góc xây dựng</h1>
-    <p>Chia sẻ kinh nghiệm thi công, xử lý hiện trường và những bài học xương máu trong nghề xây dựng.</p>
-  </section>
+      <section class="blog-layout">
+        <div class="card">
+          <h2>Những bài viết đầu tiên (sẽ thêm dần)</h2>
+          <ul class="post-list">
+            <li class="post-card">
+              <div class="post-meta">
+                <span>📅 <time>Demo</time></span>
+                <span>Chủ đề: Hoàn thiện &amp; sửa chữa nhỏ</span>
+              </div>
+              <div class="post-title">
+                Khi nào nên tự làm, khi nào nên gọi thợ? Nhìn từ vài case thực tế
+              </div>
+              <div class="post-excerpt">
+                Có những việc tưởng chừng rất đơn giản – khoan một lỗ, lắp thêm chiếc kệ –
+                nhưng nếu sai một chút là tường hỏng, gạch nứt hoặc xấu mãi. Bài này sẽ
+                ghi lại vài tình huống “tưởng dễ mà không hề dễ” để bạn cân nhắc trước khi bắt tay vào làm.
+              </div>
+              <div class="post-link">Bài viết chi tiết sẽ được cập nhật trong repo chính mxd210.</div>
+            </li>
 
-  <section class="page-content container">
-    <p>Ở đây sau này mình sẽ đăng các bài viết về kỹ thuật, quy trình, lưu ý khi thi công và các case thực tế.</p>
-  </section>
-</main>
+            <li class="post-card">
+              <div class="post-meta">
+                <span>📅 <time>Demo</time></span>
+                <span>Chủ đề: Chuẩn bị trước khi thi công</span>
+              </div>
+              <div class="post-title">
+                5 thông tin nên chuẩn bị trước khi nhờ tư vấn về công trình
+              </div>
+              <div class="post-excerpt">
+                Không phải cứ gửi câu hỏi là có thể tư vấn ngay. Nếu chuẩn bị sẵn vài thông tin cơ bản:
+                diện tích, hiện trạng, mong muốn, ngân sách... thì người tư vấn sẽ đi thẳng vào vấn đề,
+                tránh mất thời gian của cả hai bên.
+              </div>
+              <div class="post-link">Sẽ tách thành bài hướng dẫn cụ thể trong thời gian tới.</div>
+            </li>
 
+            <li class="post-card">
+              <div class="post-meta">
+                <span>📅 <time>Demo</time></span>
+                <span>Chủ đề: Đồ dùng &amp; phụ kiện cho công trình</span>
+              </div>
+              <div class="post-title">
+                Những món “nhỏ mà có võ” nên có sẵn trong nhà (nhìn từ kinh nghiệm đi công trình)
+              </div>
+              <div class="post-excerpt">
+                Không phải lúc nào cũng cần đến cả một đội thợ. Nhiều việc nhỏ chỉ cần chuẩn bị vài món đồ
+                cơ bản là xử lý được gọn và sạch. Phần này sẽ liên kết với một số sản phẩm trong cửa hàng MXD210
+                để bạn tham khảo cho nhanh.
+              </div>
+              <div class="post-link">Liên kết với các nhóm sản phẩm trong store.html.</div>
+            </li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Thi công &amp; hoàn thiện</span>
+            <span class="tag">Sửa chữa nhỏ</span>
+            <span class="tag">Chuẩn bị trước khi làm nhà</span>
+          </div>
+        </div>
+
+        <aside class="card sidebar-section">
+          <h2>Mạch nội dung Góc xây dựng</h2>
+          <p>
+            Về lâu dài, Góc xây dựng sẽ chia thành vài tuyến chính: chống thấm, điện nước, hoàn thiện,
+            đồ lắp ráp sẵn, kinh nghiệm đi công trình... Mỗi tuyến sẽ có series bài riêng, đủ để bạn đọc từ đầu
+            đến cuối mà không bị đứt mạch.
+          </p>
+          <p>
+            Một số bài sẽ được gắn trực tiếp với sản phẩm trong cửa hàng MXD210 – nhưng ưu tiên là giải thích
+            rõ bối cảnh, vì sao nên dùng, chứ không chỉ dừng lại ở việc gắn link.
+          </p>
+          <div class="sidebar-note">
+            Nếu bạn có case thực tế muốn chia sẻ (ẩn thông tin cá nhân), có thể gửi qua
+            <a href="https://zalo.me/0338328898" target="_blank" rel="noopener">Zalo 0338 328 898</a>
+            hoặc <a href="contact.html">trang Liên hệ</a>. Những tình huống thực tế luôn rất quý để học chung.
+          </div>
+          <div class="sidebar-list">
+            <a href="store.html">Xem các sản phẩm liên quan trong Cửa hàng MXD210</a>
+            <a href="affiliate.html">Xem thêm cách mình ghi lại kinh nghiệm ở Blog Affiliate</a>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MXD210 – Góc xây dựng &amp; kinh nghiệm thi công.</div>
+      <div class="footer-links">
+        <span>Canonical rebuild • Nội dung bài sẽ được cập nhật dần</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script defer src="/assets/analytics.js?v=2025-09-26-fb2"></script>
+<script defer src="/assets/mxd-affiliate.js?v=2025-09-26-fb2"></script>
+<script defer src="/assets/js/render-products.js?v=2025-09-26-fb2"></script>
+<script defer src="/assets/js/floating-contact.js?v=2025-09-26-1"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
