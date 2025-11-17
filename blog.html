@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+
+  <title>Tin tức & Hướng dẫn – MXD210</title>
+  <meta name="description" content="Khu tin tức & hướng dẫn của MXD210 – gồm góc thi công xây dựng và MXD AFF ACADEMY dành cho những ai muốn làm affiliate bài bản."/>
+
+  <!-- Repo rebuild: tạm noindex. Khi đưa lên mxd210 chính có thể đổi thành index,follow -->
+  <meta name="robots" content="noindex,follow"/>
+
+  <link rel="canonical" href="https://mxd210.github.io/blog.html"/>
+
+  <meta property="og:title" content="Tin tức & Hướng dẫn – MXD210"/>
+  <meta property="og:description" content="Góc thi công xây dựng & MXD AFF ACADEMY – nơi MXD210 chia sẻ kinh nghiệm thực tế và hướng dẫn làm affiliate."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mxd210.github.io/blog.html"/>
+  <meta property="og:image" content="https://mxd210.github.io/assets/img/og-mxd210.webp"/>
+
+  <style>
+    :root{
+      --bg:#f4f4f5;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --border:#e5e7eb;
+      --radius:14px;
+      --shadow:0 8px 30px rgba(15,23,42,.08);
+      --badge-bg:#f3f4f6;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .page{min-height:100vh;display:flex;flex-direction:column}
+
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(16px);
+      background:rgba(244,244,245,.88);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .topbar-inner{
+      max-width:1040px;margin:0 auto;
+      padding:10px 16px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .logo{
+      font-weight:700;letter-spacing:.03em;font-size:18px;
+      display:flex;align-items:center;gap:6px;
+    }
+    .logo span{
+      padding:3px 8px;border-radius:999px;
+      background:var(--accent);color:#fff;font-size:12px;font-weight:600;
+    }
+    .logo-sub{font-size:11px;color:var(--muted)}
+
+    .nav{
+      display:flex;align-items:center;gap:12px;font-size:13px;
+    }
+    .nav a{
+      padding:6px 10px;border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);white-space:nowrap;
+    }
+    .nav a:hover{
+      border-color:var(--border);background:#fff;color:var(--text);
+    }
+    .nav .nav-primary{
+      background:var(--accent);color:#fff;border-color:transparent;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .nav .nav-primary:hover{transform:translateY(-1px)}
+
+    .main{flex:1}
+    .container{
+      max-width:1040px;margin:0 auto;
+      padding:18px 16px 32px;
+    }
+
+    .hero-blog{
+      display:grid;
+      grid-template-columns:minmax(0,2.6fr) minmax(0,2.4fr);
+      gap:18px;
+      margin-bottom:22px;
+    }
+    @media (max-width:768px){
+      .hero-blog{grid-template-columns:minmax(0,1fr)}
+    }
+    .hero-main{
+      padding:18px 18px 18px;
+      background:linear-gradient(135deg,#eff6ff,#f9fafb);
+      border-radius:20px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+    .hero-pill{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:4px 10px;border-radius:999px;
+      background:var(--accent-soft);color:#1d4ed8;
+      font-size:11px;margin-bottom:10px;font-weight:500;
+    }
+    .hero-pill span{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:16px;height:16px;border-radius:999px;
+      background:#1d4ed8;color:#fff;font-size:11px;
+    }
+    .hero-title{
+      font-size:20px;line-height:1.35;font-weight:700;margin-bottom:6px;
+    }
+    .hero-desc{
+      font-size:13px;line-height:1.6;color:var(--muted);margin-bottom:12px;
+    }
+    .hero-tabs{
+      display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;
+    }
+    .hero-tab{
+      padding:6px 10px;border-radius:999px;
+      border:1px solid #e5e7eb;
+      background:#f9fafb;
+      font-size:12px;color:#374151;
+    }
+    .hero-tab[data-active="true"]{
+      background:#2563eb1a;
+      border-color:var(--accent);
+      color:#1d4ed8;
+      font-weight:500;
+    }
+    .hero-actions{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:6px;padding:8px 14px;border-radius:999px;
+      border:1px solid transparent;font-size:13px;
+      font-weight:500;cursor:pointer;transition:all .16s ease;
+    }
+    .btn-main{
+      background:var(--accent);color:#fff;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .btn-main:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 26px rgba(37,99,235,.45);
+    }
+    .btn-ghost{
+      background:#fff;color:#111827;border-color:var(--border);
+    }
+    .btn-ghost:hover{background:#f9fafb}
+    .btn span.icon{font-size:14px}
+
+    .hero-side{
+      display:grid;
+      grid-template-rows:minmax(0,1fr) minmax(0,1fr);
+      gap:10px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:14px 14px 12px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{
+      font-size:14px;margin-bottom:4px;font-weight:600;
+    }
+    .card p{
+      font-size:12px;color:var(--muted);
+      margin-bottom:8px;line-height:1.5;
+    }
+    .tag-row{
+      display:flex;flex-wrap:wrap;gap:6px;
+    }
+    .tag{
+      padding:4px 8px;border-radius:999px;
+      background:#f3f4f6;
+      font-size:11px;color:#4b5563;
+    }
+
+    .section-title{
+      font-size:15px;font-weight:600;margin-bottom:4px;
+    }
+    .section-desc{
+      font-size:12px;color:var(--muted);margin-bottom:10px;
+    }
+
+    .post-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-bottom:20px;
+    }
+    @media (max-width:820px){
+      .post-grid{grid-template-columns:minmax(0,1fr)}
+    }
+
+    .post-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:12px 12px 10px;
+      box-shadow:var(--shadow);
+      font-size:12px;
+      display:flex;flex-direction:column;gap:6px;
+    }
+    .post-meta{
+      display:flex;align-items:center;gap:6px;
+      font-size:11px;color:#6b7280;
+    }
+    .post-badge{
+      padding:3px 7px;border-radius:999px;
+      background:#f3f4f6;
+      font-size:11px;color:#4b5563;
+    }
+    .post-title{
+      font-size:13px;font-weight:600;line-height:1.4;
+    }
+    .post-desc{
+      font-size:12px;color:#4b5563;line-height:1.5;
+    }
+    .post-footer{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-top:4px;font-size:11px;color:#6b7280;
+    }
+    .post-link{
+      font-size:12px;color:#2563eb;
+    }
+
+    .hint-note{
+      font-size:11px;color:#6b7280;margin-top:4px;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background:#f9fafb;
+    }
+    .footer-inner{
+      max-width:1040px;margin:0 auto;
+      padding:10px 16px 14px;
+      display:flex;flex-wrap:wrap;gap:8px;
+      align-items:center;justify-content:space-between;
+      font-size:11px;color:#6b7280;
+    }
+    .footer-links{
+      display:flex;flex-wrap:wrap;gap:10px;
+    }
+  </style>
+
+  <!-- GA4: MXD210 – G-SRMVN734DX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRMVN734DX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SRMVN734DX');
+  </script>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="logo">
+          MXD<span>210</span>
+        </div>
+        <div class="logo-sub">Giải pháp xây dựng • Cửa hàng affiliate</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="store.html">Cửa hàng sản phẩm</a>
+        <a href="blog.html" class="nav-primary">Tin tức &amp; Hướng dẫn</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="hero-blog">
+        <div class="hero-main">
+          <div class="hero-pill">
+            <span>◎</span>
+            Blog MXD210: Góc thi công &amp; MXD AFF ACADEMY
+          </div>
+          <h1 class="hero-title">
+            Tin tức &amp; Hướng dẫn – gom hai khu:<br/>
+            góc thi công và MXD AFF ACADEMY
+          </h1>
+          <p class="hero-desc">
+            Thay vì tách rời, MXD210 để chung hai mảng: những kinh nghiệm thi công thực tế
+            và những ghi chép dành cho người muốn làm affiliate. Cả hai đều bắt đầu từ công trình thật
+            và nhu cầu thật.
+          </p>
+          <div class="hero-tabs">
+            <span class="hero-tab" data-active="true">Góc thi công &amp; kinh nghiệm xây dựng</span>
+            <span class="hero-tab">MXD AFF ACADEMY – Hướng dẫn làm affiliate</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#xay-dung" class="btn btn-main">
+              <span class="icon">🏗️</span>
+              Xem bài về thi công &amp; giải pháp
+            </a>
+            <a href="#affiliate" class="btn btn-ghost">
+              <span class="icon">💼</span>
+              Vào khu MXD AFF ACADEMY
+            </a>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="card">
+            <h2>Góc thi công &amp; giải pháp xây dựng</h2>
+            <p>
+              Nơi tổng hợp các bài chi tiết về vật tư, cách xử lý tình huống trên công trình, những lỗi
+              “nhìn tưởng nhỏ nhưng sửa lại rất mất công” nếu không để ý từ đầu.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Vật tư &amp; phụ kiện</span>
+              <span class="tag">Chi tiết thi công</span>
+              <span class="tag">Mẹo tiết kiệm chi phí</span>
+            </div>
+          </div>
+          <div class="card">
+            <h2>MXD AFF ACADEMY</h2>
+            <p>
+              Khu dành riêng cho anh em muốn làm affiliate: từ cách dựng nội dung, set link,
+              đọc số liệu cho tới những “kinh nghiệm xương máu” sau nhiều lần thử – sai – sửa.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Shopee / Lazada / TikTok</span>
+              <span class="tag">Kịch bản nội dung</span>
+              <span class="tag">Case thực tế</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KHU 1: Góc thi công & kinh nghiệm xây dựng -->
+      <section id="xay-dung" style="margin-bottom:22px;">
+        <h2 class="section-title">Góc thi công &amp; kinh nghiệm xây dựng</h2>
+        <p class="section-desc">
+          Nhóm bài này tập trung vào những tình huống dễ gặp: sửa chữa nhỏ trong nhà, chọn vật tư, xử lý
+          “hậu quả” của những lần làm vội. Văn phong đời thường, nói thẳng vào vấn đề.
+        </p>
+        <div class="post-grid">
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-badge">Thi công thực tế</span>
+              <span>Góc nhìn MXD210</span>
+            </div>
+            <div class="post-title">
+              Khi nào nên “làm lại cho xong” thay vì cố chắp vá phần đã hỏng?
+            </div>
+            <p class="post-desc">
+              Có những chỗ trong nhà càng sửa càng nát – không phải vì thợ dở, mà vì bản chất phần đó đã
+              sai ngay từ đầu. Bài viết này nói về ranh giới giữa “sửa cho tạm ổn” và “chấp nhận làm lại”.
+            </p>
+            <div class="post-footer">
+              <a href="#" class="post-link">Đọc bài (demo, sẽ gắn link thật)</a>
+              <span>Thời gian đọc: ~7 phút</span>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-badge">Vật tư &amp; phụ kiện</span>
+              <span>Gần gũi, dễ hiểu</span>
+            </div>
+            <div class="post-title">
+              Những món “nhỏ xíu” nên có sẵn trong nhà để đỡ phải gọi thợ
+            </div>
+            <p class="post-desc">
+              Không phải việc gì cũng cần gọi thợ. Một vài món rất nhỏ – từ tắc kê, vít, ke góc, băng keo
+              chuyên dụng – nếu chuẩn bị sẵn, bạn xử lý được khá nhiều sự cố mà không cần chờ ai.
+            </p>
+            <div class="post-footer">
+              <a href="#" class="post-link">Đọc bài (demo)</a>
+              <span>Thời gian đọc: ~5 phút</span>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-badge">Góc nhìn ngân sách</span>
+              <span>Thực tế &amp; thẳng thắn</span>
+            </div>
+            <div class="post-title">
+              Chọn vật tư “vừa túi tiền” mà không tự làm khó mình về sau
+            </div>
+            <p class="post-desc">
+              Rẻ quá thì mau hỏng, nhưng cứ lao vào loại đắt nhất cũng không hợp lý. Bài này nói về cách
+              phân loại mức ưu tiên để bạn biết chỗ nào nên đầu tư, chỗ nào chỉ cần vừa đủ dùng.
+            </p>
+            <div class="post-footer">
+              <a href="#" class="post-link">Đọc bài (demo)</a>
+              <span>Thời gian đọc: ~8 phút</span>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-badge">Case công trình</span>
+              <span>Ví dụ cụ thể</span>
+            </div>
+            <div class="post-title">
+              Một lần “chữa cháy” hệ thống treo đồ – và bài học rút ra
+            </div>
+            <p class="post-desc">
+              Một câu chuyện nhỏ từ thực tế: chỉ vì treo đồ không đúng cách mà cả khu vực phải làm lại.
+              Từ đó rút ra vài nguyên tắc đơn giản để tránh lặp lại.
+            </p>
+            <div class="post-footer">
+              <a href="#" class="post-link">Đọc bài (demo)</a>
+              <span>Thời gian đọc: ~6 phút</span>
+            </div>
+          </article>
+        </div>
+        <p class="hint-note">
+          Sau này khi có từng bài chi tiết, mỗi “Đọc bài (demo)” sẽ được thay bằng link tới file bài viết tương ứng
+          (ví dụ: <code>xay-dung-lam-lai-hay-chap-va.html</code>, <code>vattu-nho-nen-co-san.html</code>...).
+        </p>
+      </section>
+
+      <!-- KHU 2: MXD AFF ACADEMY -->
+      <section id="affiliate" style="margin-bottom:10px;">
+        <h2 class="section-title">MXD AFF ACADEMY – Khu dành cho affiliate</h2>
+        <p class="section-desc">
+          Đây là khu dành cho những ai muốn làm affiliate theo kiểu bền: hiểu mình đang làm gì,
+          chọn sản phẩm có lý do, đọc số liệu cơ bản và kiên nhẫn xây hệ thống chứ không chỉ “quăng link”.
+        </p>
+        <div class="post-grid">
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-badge">Cơ bản</span>
+              <span>Affiliate cho người mới</span>
+            </div>
+            <div class="post-title">
+              Bức tranh tổng quan: từ link aff tới đơn hàng thực tế diễn ra như thế nào?
+            </div>
+            <p class="post-desc">
+              Nếu bạn chưa hình dung rõ hành trình từ lúc người xem bấm vào link tới khi có đơn hàng
+              và được tính hoa hồng, bài này sẽ giải thích lại đường đi một cách nhẹ nhàng, đời thường.
+            </p>
+            <div class="post-footer">
+              <a href="#" class="post-link">Đọc bài (demo)</a>
+              <span>Thời gian đọc: ~8 phút</span>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-badge">Shopee / Lazada</span>
+              <span>Kinh nghiệm thực tế</span>
+            </div>
+            <div class="post-title">
+              Những lỗi “ngớ ngẩn” khiến link aff không chạy hoặc mất đơn
+            </div>
+            <p class="post-desc">
+              Từ việc dán nhầm link, quên gắn tham số, tới chuyện người dùng vào app nhưng không tính đơn...
+              MXD210 tổng hợp lại để bạn hạn chế mất công vô ích.
+            </p>
+            <div class="post-footer">
+              <a href="#" class="post-link">Đọc bài (demo)</a>
+              <span>Thời gian đọc: ~7 phút</span>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-badge">Nội dung &amp; kịch bản</span>
+              <span>Phong cách MXD210</span>
+            </div>
+            <div class="post-title">
+              Viết sao để người ta hiểu mình đang giúp họ, không phải chỉ “bán hàng”
+            </div>
+            <p class="post-desc">
+              Cách kể chuyện xoay quanh một vấn đề thật của người đọc, rồi mới dẫn dần tới giải pháp
+              và sản phẩm – thay vì nhảy ngay vào phần “mua đi”.
+            </p>
+            <div class="post-footer">
+              <a href="#" class="post-link">Đọc bài (demo)</a>
+              <span>Thời gian đọc: ~9 phút</span>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-meta">
+              <span class="post-badge">Kinh nghiệm xương máu</span>
+              <span>Ghi chép dần</span>
+            </div>
+            <div class="post-title">
+              Khi nào nên tạm dừng test thêm sản phẩm mới và tập trung tối ưu cái đang có?
+            </div>
+            <p class="post-desc">
+              Một trong những sai lầm hay gặp là đổi sản phẩm liên tục mà không kịp hiểu cái nào
+              thực sự hợp với nhóm người theo dõi mình. Bài này nói về việc “đi chậm mà chắc”.
+            </p>
+            <div class="post-footer">
+              <a href="#" class="post-link">Đọc bài (demo)</a>
+              <span>Thời gian đọc: ~6 phút</span>
+            </div>
+          </article>
+        </div>
+        <p class="hint-note">
+          Sau này khi triển khai seri MXD AFF ACADEMY (10 bài trở lên), từng bài sẽ có file riêng.
+          Blog.html chỉ đóng vai trò “bản đồ” dẫn tới các bài đó.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MXD210 – Tin tức &amp; Hướng dẫn.</div>
+      <div class="footer-links">
+        <span>Canonical rebuild • Kết hợp Góc thi công &amp; MXD AFF ACADEMY</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
