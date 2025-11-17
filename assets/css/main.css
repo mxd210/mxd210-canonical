@@ -1,0 +1,201 @@
+/* MXD210 CANONICAL – main layout cơ bản */
+
+:root {
+  --mxd-bg: #f9fafb;
+  --mxd-text: #111827;
+  --mxd-accent: #111827;
+  --mxd-muted: #6b7280;
+  --mxd-border: #e5e7eb;
+  --mxd-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--mxd-bg);
+  color: var(--mxd-text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--mxd-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Khối container chung */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* HEADER + NAV MXD210 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffff;
+  border-bottom: 1px solid var(--mxd-border);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logo-main {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-sub {
+  font-size: 0.8rem;
+  color: var(--mxd-muted);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.main-nav a {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.main-nav a:hover {
+  background: #f3f4f6;
+  text-decoration: none;
+}
+
+/* LAYOUT CHUNG CHO PAGE */
+.page {
+  padding: 1.5rem 0 2.5rem;
+}
+
+/* HERO – dùng cho mxd-aff-academy và sau này có thể reuse */
+.hero {
+  padding: 1.75rem 0 1.5rem;
+  margin-bottom: 0.5rem;
+  background: #eef2ff;
+  border-bottom: 1px solid var(--mxd-border);
+}
+
+.hero .container {
+  max-width: 900px;
+}
+
+.hero h1 {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 1.6rem;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--mxd-muted);
+}
+
+.hero-kicker {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4f46e5;
+  margin: 0;
+}
+
+/* PAGE AFFILIATE ACADEMY */
+.page-aff .container {
+  max-width: 900px;
+}
+
+.aff-intro,
+.aff-series,
+.aff-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border-radius: var(--mxd-radius);
+  border: 1px solid var(--mxd-border);
+}
+
+.aff-intro h2,
+.aff-series h2,
+.aff-note h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.aff-intro ul,
+.aff-series ol {
+  margin: 0.4rem 0 0.2rem 1.2rem;
+  padding: 0;
+}
+
+.aff-intro li,
+.aff-series li {
+  margin-bottom: 0.25rem;
+}
+
+.aff-note p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+/* TYPO CHUNG */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--mxd-text);
+}
+
+p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-nav ul {
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding: 1.25rem 0 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.35rem;
+  }
+}
