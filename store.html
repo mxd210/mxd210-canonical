@@ -8,6 +8,9 @@
   <meta name="description" content="Cửa hàng MXD210 – tổng hợp các sản phẩm, vật tư, phụ kiện và đồ gia dụng liên quan đến xây dựng, được lựa chọn và sàng lọc kỹ từ nhiều sàn thương mại điện tử."/>
   <meta name="robots" content="noindex,follow"/>
 
+  <!-- VERIFY: Google Search Console -->
+  <meta name="google-site-verification" content="84L0tRVs_wNPAyXii38-OaeGi8TyJdMlkZXVIHcnj0o">
+
   <link rel="canonical" href="https://mxd210.github.io/store.html"/>
 
   <meta property="og:title" content="Cửa hàng MXD210 – Sản phẩm chọn lọc"/>
@@ -63,6 +66,8 @@
     .logo-sub{font-size:11px;color:var(--muted)}
     .nav{
       display:flex;align-items:center;gap:12px;font-size:13px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
     .nav a{
       padding:6px 10px;border-radius:999px;
@@ -335,8 +340,11 @@
       </div>
       <nav class="nav">
         <a href="index.html">Trang chủ</a>
-        <a href="store.html" class="nav-primary">Cửa hàng sản phẩm</a>
-        <a href="blog.html">Tin tức &amp; Hướng dẫn</a>
+        <a href="store.html" class="nav-primary">Cửa hàng</a>
+        <a href="blog-xay-dung.html">Góc xây dựng</a>
+        <a href="affiliate.html">Blog Affiliate</a>
+        <a href="tools.html">Công cụ</a>
+        <a href="about.html">Giới thiệu</a>
         <a href="contact.html">Liên hệ</a>
       </nav>
     </div>
@@ -366,9 +374,9 @@
               <span class="icon">🛠️</span>
               Xem danh sách sản phẩm mẫu
             </a>
-            <a href="blog.html" class="btn btn-ghost">
+            <a href="blog-xay-dung.html" class="btn btn-ghost">
               <span class="icon">📚</span>
-              Đọc tin tức &amp; hướng dẫn
+              Đọc Góc xây dựng &amp; hướng dẫn
             </a>
             <a href="contact.html" class="btn btn-ghost">
               <span class="icon">☎️</span>
@@ -612,21 +620,51 @@
   </footer>
 </div>
 
+<script defer src="/assets/analytics.js?v=2025-09-26-fb2"></script>
+<script defer src="/assets/mxd-affiliate.js?v=2025-09-26-fb2"></script>
+<script defer src="/assets/js/render-products.js?v=2025-09-26-fb2"></script>
+<script defer src="/assets/js/floating-contact.js?v=2025-09-26-1"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Giai đoạn demo: các nút Mua chỉ log ra console để kiểm tra.
-  // Khi nối vào mxd-affiliates.js & mxd-buy.js, đoạn này có thể được thay/loại bỏ.
-  const buyButtons = document.querySelectorAll('.btn-buy');
-  buyButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const sku = btn.getAttribute('data-sku') || '';
-      const merchant = btn.getAttribute('data-merchant') || '';
-      const origin = btn.getAttribute('data-origin-url') || '';
-      console.log('[MXD210 DEMO] Click mua:', { sku, merchant, origin });
-      alert('Đây là bản demo khung cửa hàng. Link mua thật sẽ được kích hoạt sau khi nối với hệ thống affiliate của MXD210.');
+  // Nối nút Mua với hệ thống affiliate MXD210
+  (function(){
+    var buttons = document.querySelectorAll('.btn-buy');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var sku = btn.getAttribute('data-sku') || '';
+        var merchant = btn.getAttribute('data-merchant') || '';
+        var origin = btn.getAttribute('data-origin-url') || '';
+
+        // Dựng object product cho tracking
+        var card = btn.closest('.product-card');
+        var product = {
+          sku: sku,
+          merchant: merchant,
+          origin: origin,
+          name: card ? (card.querySelector('.product-title')?.textContent || '') : '',
+          category: card ? (card.querySelector('.product-tag')?.textContent || '') : '',
+          price: null
+        };
+
+        if (window.MXD_AFF && typeof MXD_AFF.makeIsclixUrl === 'function') {
+          var url = MXD_AFF.makeIsclixUrl(merchant, origin, sku);
+
+          if (window.MXD_TRACK && typeof MXD_TRACK.clickBuy === 'function') {
+            MXD_TRACK.clickBuy(product);
+          }
+
+          if (url) {
+            window.open(url, '_blank');
+          } else {
+            alert('Không tạo được link mua. Vui lòng thử lại sau.');
+          }
+        } else {
+          alert('Hệ thống affiliate MXD210 chưa sẵn sàng trên bản rebuild này.');
+        }
+      });
     });
-  });
+  })();
 </script>
 </body>
 </html>
