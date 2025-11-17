@@ -1,0 +1,479 @@
+<!-- REPLACE WHOLE FILE: /g.html -->
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+
+  <title>Chi tiết sản phẩm – MXD210</title>
+  <meta name="description" content="Trang chi tiết sản phẩm của MXD210 – xem thông tin, ngữ cảnh sử dụng và các lựa chọn mua hàng trên nhiều sàn."/>
+
+  <meta name="robots" content="noindex,follow"/>
+
+  <link rel="canonical" href="https://mxd210.github.io/g.html"/>
+
+  <meta property="og:title" content="Chi tiết sản phẩm – MXD210"/>
+  <meta property="og:description" content="Thông tin chi tiết sản phẩm được MXD210 chọn lọc, gắn với ngữ cảnh sử dụng thực tế và nhiều lựa chọn mua hàng."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mxd210.github.io/g.html"/>
+  <meta property="og:image" content="https://mxd210.github.io/assets/img/og-mxd210.webp"/>
+
+  <style>
+    :root{
+      --bg:#f4f4f5;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-soft:#dbeafe;
+      --border:#e5e7eb;
+      --radius:14px;
+      --shadow:0 8px 30px rgba(15,23,42,.08);
+      --badge-bg:#f3f4f6;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .page{min-height:100vh;display:flex;flex-direction:column}
+
+    .topbar{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:blur(16px);
+      background:rgba(244,244,245,.88);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .topbar-inner{
+      max-width:1040px;margin:0 auto;
+      padding:10px 16px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .logo{
+      font-weight:700;letter-spacing:.03em;font-size:18px;
+      display:flex;align-items:center;gap:6px;
+    }
+    .logo span{
+      padding:3px 8px;border-radius:999px;
+      background:var(--accent);color:#fff;font-size:12px;font-weight:600;
+    }
+    .logo-sub{font-size:11px;color:var(--muted)}
+    .nav{
+      display:flex;align-items:center;gap:12px;font-size:13px;
+    }
+    .nav a{
+      padding:6px 10px;border-radius:999px;
+      border:1px solid transparent;
+      color:var(--muted);white-space:nowrap;
+    }
+    .nav a:hover{
+      border-color:var(--border);background:#fff;color:var(--text);
+    }
+    .nav .nav-primary{
+      background:var(--accent);color:#fff;border-color:transparent;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .nav .nav-primary:hover{transform:translateY(-1px)}
+
+    .main{flex:1}
+    .container{
+      max-width:1040px;margin:0 auto;
+      padding:18px 16px 32px;
+    }
+
+    .breadcrumb{
+      font-size:11px;
+      color:#6b7280;
+      margin-bottom:10px;
+    }
+    .breadcrumb a{color:#2563eb}
+    .breadcrumb span.sep{margin:0 3px;}
+
+    .layout{
+      display:grid;
+      grid-template-columns:minmax(0,2.2fr) minmax(0,1.8fr);
+      gap:18px;
+    }
+    @media (max-width:900px){
+      .layout{grid-template-columns:minmax(0,1fr)}
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:20px;
+      border:1px solid var(--border);
+      padding:14px 14px 12px;
+      box-shadow:var(--shadow);
+    }
+
+    .product-header{
+      display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;margin-bottom:10px;
+    }
+    .product-image{
+      width:140px;height:140px;border-radius:16px;
+      background:linear-gradient(135deg,#e5e7eb,#f9fafb);
+      display:flex;align-items:center;justify-content:center;
+      font-size:12px;color:#6b7280;
+      flex-shrink:0;
+      overflow:hidden;
+    }
+    .product-image img{
+      width:100%;height:100%;object-fit:cover;
+    }
+    .product-main{
+      flex:1;min-width:0;
+    }
+    .badge-row{
+      display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px;
+    }
+    .badge{
+      padding:3px 8px;border-radius:999px;
+      background:#f3f4f6;
+      font-size:11px;color:#4b5563;
+    }
+    .badge-sku{
+      background:#eef2ff;
+      color:#4338ca;
+    }
+    .product-title{
+      font-size:18px;
+      font-weight:700;
+      margin-bottom:4px;
+      line-height:1.3;
+    }
+    .product-sub{
+      font-size:12px;
+      color:#6b7280;
+      margin-bottom:6px;
+    }
+
+    .price-row{
+      display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;
+      margin-bottom:8px;
+      font-family:system-ui;
+    }
+    .price-current{
+      font-size:16px;
+      font-weight:700;
+      color:#b91c1c;
+    }
+    .price-old{
+      font-size:12px;
+      color:#9ca3af;
+      text-decoration:line-through;
+    }
+    .price-note{
+      font-size:11px;
+      color:#16a34a;
+    }
+
+    .btn-row{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;margin-bottom:4px;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:6px;padding:8px 14px;border-radius:999px;
+      border:1px solid transparent;font-size:13px;
+      font-weight:500;cursor:pointer;transition:all .16s ease;
+    }
+    .btn-main{
+      background:var(--accent);color:#fff;
+      box-shadow:0 6px 18px rgba(37,99,235,.35);
+    }
+    .btn-main:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 26px rgba(37,99,235,.45);
+    }
+    .btn-ghost{
+      background:#fff;color:#111827;border-color:var(--border);
+    }
+    .btn-ghost:hover{background:#f9fafb}
+    .btn span.icon{font-size:14px}
+
+    .product-body{
+      font-size:13px;
+      color:#374151;
+      line-height:1.6;
+    }
+    .product-body h2{
+      font-size:14px;
+      margin:10px 0 4px;
+      font-weight:600;
+    }
+    .product-body ul{
+      padding-left:18px;
+      margin:4px 0;
+    }
+    .product-body li{
+      margin-bottom:3px;
+    }
+
+    .side-card h2{
+      font-size:14px;margin-bottom:4px;font-weight:600;
+    }
+    .side-card p{
+      font-size:12px;color:#6b7280;margin-bottom:8px;line-height:1.5;
+    }
+    .side-list{
+      list-style:none;
+      font-size:12px;
+      display:flex;flex-direction:column;
+      gap:5px;
+      color:#374151;
+    }
+    .side-list li{
+      display:flex;align-items:flex-start;gap:6px;
+    }
+    .side-list span.bullet{
+      width:16px;height:16px;border-radius:999px;
+      background:#22c55e1a;
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;color:#16a34a;
+      margin-top:1px;
+      flex-shrink:0;
+    }
+
+    .related-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-top:10px;
+    }
+    @media (max-width:900px){
+      .related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width:640px){
+      .related-grid{grid-template-columns:minmax(0,1fr)}
+    }
+    .related-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:8px 9px 7px;
+      box-shadow:var(--shadow);
+      font-size:11px;
+    }
+    .related-title{
+      font-size:12px;
+      font-weight:600;
+      margin-bottom:2px;
+    }
+    .related-meta{
+      font-size:11px;
+      color:#6b7280;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background:#f9fafb;
+    }
+    .footer-inner{
+      max-width:1040px;margin:0 auto;
+      padding:10px 16px 14px;
+      display:flex;flex-wrap:wrap;gap:8px;
+      align-items:center;justify-content:space-between;
+      font-size:11px;color:#6b7280;
+    }
+    .footer-links{
+      display:flex;flex-wrap:wrap;gap:10px;
+    }
+  </style>
+
+  <!-- GA4: MXD210 – G-SRMVN734DX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRMVN734DX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SRMVN734DX');
+  </script>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div class="logo">
+          MXD<span>210</span>
+        </div>
+        <div class="logo-sub">Giải pháp xây dựng • Cửa hàng affiliate</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="store.html">Cửa hàng sản phẩm</a>
+        <a href="blog.html">Tin tức &amp; Hướng dẫn</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <span class="sep">›</span>
+        <a href="store.html">Cửa hàng</a>
+        <span class="sep">›</span>
+        <span>Chi tiết sản phẩm</span>
+      </nav>
+
+      <section class="layout">
+        <!-- Cột chính: chi tiết sản phẩm -->
+        <article class="card">
+          <div class="product-header">
+            <div class="product-image" id="product-image">
+              Ảnh sản phẩm (demo)
+            </div>
+            <div class="product-main">
+              <div class="badge-row">
+                <span class="badge">Sản phẩm MXD210</span>
+                <span class="badge badge-sku" id="sku-badge">SKU: đang tải…</span>
+              </div>
+              <h1 class="product-title" id="product-title">
+                Tên sản phẩm (đang dùng dữ liệu demo)
+              </h1>
+              <div class="product-sub" id="product-sub">
+                Khi nối với dữ liệu thật, phần này sẽ mô tả ngắn: sản phẩm dùng trong bối cảnh nào,
+                phù hợp cho ai, có điểm gì đáng chú ý.
+              </div>
+
+              <div class="price-row">
+                <span class="price-current" id="price-current">≈ 0đ (demo)</span>
+                <span class="price-old" id="price-old"></span>
+                <span class="price-note" id="price-note">Giá sẽ cập nhật theo dữ liệu mới nhất.</span>
+              </div>
+
+              <div class="btn-row">
+                <button class="btn btn-main" type="button" id="btn-buy-main">
+                  <span class="icon">🛒</span>
+                  Mua sản phẩm (demo)
+                </button>
+                <button class="btn btn-ghost" type="button" onclick="location.href='store.html'">
+                  <span class="icon">⬅️</span>
+                  Quay lại cửa hàng
+                </button>
+                <button class="btn btn-ghost" type="button" onclick="location.href='contact.html'">
+                  <span class="icon">☎️</span>
+                  Cần tư vấn thêm? Liên hệ MXD210
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-body" id="product-body">
+            <h2>Ngữ cảnh sử dụng</h2>
+            <p>
+              Ở phiên bản chính thức, phần này sẽ nói rõ: sản phẩm mạnh ở điểm nào, nên dùng trong
+              những tình huống nào, có lưu ý gì trước khi mua để bạn đỡ phải “mua thử cho biết”.
+            </p>
+
+            <h2>Điểm cần lưu ý trước khi mua</h2>
+            <ul>
+              <li>Kiểm tra kỹ kích thước, tải trọng, công suất hoặc thông số kỹ thuật quan trọng.</li>
+              <li>Xem đánh giá của người dùng (nhấn vào link sang sàn sẽ thấy phần đánh giá chi tiết).</li>
+              <li>Nếu sản phẩm liên quan tới an toàn (điện, nước, chịu lực...), nên ưu tiên shop uy tín.</li>
+            </ul>
+
+            <h2>Ghi chú về giá &amp; khuyến mãi</h2>
+            <p>
+              Giá hiển thị trên trang là tham khảo. Giá thực tế, phí vận chuyển và khuyến mãi sẽ theo từng
+              sàn tại thời điểm bạn mở link. MXD210 không tự thu tiền, chỉ dẫn bạn tới nơi mua chính thức.
+            </p>
+          </div>
+        </article>
+
+        <!-- Cột bên: thông tin nhanh & sản phẩm liên quan -->
+        <aside class="card side-card">
+          <h2>Thông tin nhanh</h2>
+          <p>
+            SKU ở trên chính là “mã nhận diện” để MXD210 biết sản phẩm nào đang được mở.
+            Khi gắn với JSON và hệ thống affiliate, chỉ cần trùng SKU là mọi thứ sẽ khớp.
+          </p>
+          <ul class="side-list">
+            <li>
+              <span class="bullet">✓</span>
+              <div><strong>SKU (mxd210):</strong> <span id="sku-text">chưa có</span></div>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <div><strong>Nguồn dữ liệu:</strong> sẽ lấy từ file JSON (hoặc API) chuẩn của MXD210.</div>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <div><strong>Liên kết mua hàng:</strong> sẽ được tạo qua hệ thống affiliate (isclix) của MXD210.</div>
+            </li>
+          </ul>
+
+          <h2 style="margin-top:12px;">Sản phẩm liên quan (demo)</h2>
+          <p>
+            Ở bản chính thức, khu này sẽ gợi ý vài sản phẩm “cùng ngữ cảnh” để bạn so sánh nhanh
+            mà không phải tự đi tìm lại từ đầu.
+          </p>
+          <div class="related-grid">
+            <div class="related-card">
+              <div class="related-title">Sản phẩm liên quan A</div>
+              <div class="related-meta">Phụ kiện / vật tư cùng nhóm</div>
+            </div>
+            <div class="related-card">
+              <div class="related-title">Sản phẩm liên quan B</div>
+              <div class="related-meta">Gợi ý thay thế hoặc nâng cấp</div>
+            </div>
+            <div class="related-card">
+              <div class="related-title">Sản phẩm liên quan C</div>
+              <div class="related-meta">Dùng chung trong một hạng mục thi công</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> MXD210 – Chi tiết sản phẩm.</div>
+      <div class="footer-links">
+        <span>Canonical rebuild • Dùng SKU trên URL: g.html?sku=...</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Đọc SKU từ query: g.html?sku=...
+  (function(){
+    var params = new URLSearchParams(location.search);
+    var sku = (params.get('sku') || '').trim();
+    var skuBadge = document.getElementById('sku-badge');
+    var skuText  = document.getElementById('sku-text');
+
+    if (!sku) {
+      skuBadge.textContent = 'SKU: không tìm thấy (demo)';
+      skuText.textContent  = 'không có – vui lòng mở từ link có sku=...';
+      document.title = 'Chi tiết sản phẩm – MXD210';
+      return;
+    }
+
+    skuBadge.textContent = 'SKU: ' + sku;
+    skuText.textContent  = sku;
+
+    // Nhẹ nhàng nhét SKU vào title để dễ phân biệt tab
+    document.title = 'Sản phẩm • ' + sku + ' – MXD210';
+  })();
+
+  // Bản demo: nút Mua chỉ báo trước.
+  // Khi nối với mxd-affiliates.js + mxd-buy.js, đoạn này sẽ được thay/bổ sung.
+  document.getElementById('btn-buy-main').addEventListener('click', function(){
+    var params = new URLSearchParams(location.search);
+    var sku = (params.get('sku') || '').trim();
+    alert('Đây là bản demo khung chi tiết sản phẩm.\n\nKhi nối với hệ thống affiliate của MXD210, nút này sẽ mở link mua thật tương ứng với SKU: ' + (sku || '(chưa có)') + '.');
+  });
+</script>
+</body>
+</html>
